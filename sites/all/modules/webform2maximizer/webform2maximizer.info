@@ -1,0 +1,8 @@
+name = Webform2Maximizer
+description = Integrates the Webform module with Maximizer
+package = Webform
+core = "7.x"
+package = Webform
+
+
+dependencies[] = webform

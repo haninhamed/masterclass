@@ -1,0 +1,467 @@
+<?php
+
+/**
+ * @file
+ * module hooks for the webform2maximizer module.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function webform2maximizer_menu() {
+  $items = array();
+
+  /*
+  $items['test'] = array(
+    'title' => 'test',
+    'page callback' => '_webform2maximizer_test',
+    'access callback' => TRUE,
+  );
+  */
+
+  $items['node/%webform_menu/webform/webform2maximizer'] = array(
+    'title' => 'maximizer',
+    'page callback' => 'webform2maximizer_manage',
+    'page arguments' => array(1),
+    'access callback' => 'node_access',
+    'access arguments' => array('update', 1),
+    'file' => 'webform2maximizer.admin.inc',
+    'weight' => 10,
+    'type' => MENU_LOCAL_TASK,
+  );
+
+  $items['node/%webform_menu/webform/webform2maximizer/add'] = array(
+    'title' => 'Add maximizer Mapping',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('webform2maximizer_component_add', 1),
+    'access callback' => 'node_access',
+    'access arguments' => array('update', 1),
+    'file' => 'webform2maximizer.admin.inc',
+    'type' => MENU_LOCAL_ACTION,
+  );
+
+  $items['node/%webform_menu/webform/webform2maximizer/delete/%'] = array(
+    'title' => 'Add maximizer Mapping',
+    'page callback' => 'webform2maximizer_component_delete',
+    'page arguments' => array(1, 5),
+    'access callback' => 'node_access',
+    'access arguments' => array('update', 1),
+    'file' => 'webform2maximizer.admin.inc',
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+function _webform2maximizer_test() {
+  
+    try {
+	  echo("<h1>RUNNING TEST</h1>");
+	  $client = new SoapClient("http://62.232.92.99/SupportersWebImport/SupportersWebImport.asmx?wsdl",array('cache_wsdl' => WSDL_CACHE_NONE,'trace' => TRUE, 'Username' => 'WebImport', 'Password' => 'Pa55w0rd'));
+      dsm($client); 
+    }
+    catch (Exception $e) {
+      dsm($e);
+      dsm('hit this');
+    }
+  
+  return 'this is a test';
+}
+
+
+/**
+ * Respond to a Webform submission being inserted.
+ *
+ * webform2maximizer will take the webform that is now stored in the local db and sent it to Maximizer
+ *
+ * @param $node
+ *   The Webform node on which this submission was made.
+ * @param $submission
+ *   The Webform submission that was just inserted into the database.
+ */
+function webform2maximizer_webform_submission_insert($node, $submission) {
+  //Lookup our webform2maximizer settings for this webform from the db
+  $select = db_select('webform2maximizer_webform', 'maximizer_webform');
+  $select->fields('maximizer_webform');
+  $select->condition('nid', $node->nid);
+  $maximizer_webform = $select->execute()->fetchAll();
+  if ($maximizer_webform) {
+    $maximizer_webform = $maximizer_webform[0];
+  }
+
+  //Make sure the webform is active if, it is not, then we have nothing to do.
+  if ($maximizer_webform && $maximizer_webform->active) {
+
+    //Setup the maximizer URL and ID
+    $maximizerurl = $maximizer_webform->url;
+    $maximizerid = $maximizer_webform->idkey;
+
+    // Initialise the data array (soon to be object)
+    $data_addressbook = array();
+	$data_addressbook_udfs = array();
+	$data_opportunity = array();
+	$data_opportunity_udfs = array();
+
+    //Lookup all of our individual webform component mappings to sugar
+    $select = db_select('webform2maximizer_component', 'maximizer_component');
+    $select->fields('maximizer_component');
+    $select->condition('nid', $node->nid);
+    $maximizer_components_results = $select->execute()->fetchAll();
+
+    // Sort all the components by their sugar key, so that we can append elements with the same
+    // key when we send the items to sugar.  We have to do this because we
+    // can map more than one webform field to a single sugar field
+    $maximizer_components_sorted = array();
+    foreach ($maximizer_components_results as $maximizer_component) {
+      $maximizer_components_sorted[$maximizer_component->maximizerkey][] = $maximizer_component;
+    }
+
+    // Now by Maximizer key go through all webform components mapped to each Maximizer
+    foreach ($maximizer_components_sorted as $key => $maximizer_components) {
+      $value = '';
+
+      // Usually there will just be 1, but it is possible to map more than one field
+      // to a single sugar field
+      foreach ($maximizer_components as $maximizer_component) {
+
+        // Webform version 7.3 wraps the form values in an element 'value'. 7.4 should be accessed directly.
+        if (array_key_exists('value', $submission->data[$maximizer_component->cid])) {
+          $formvalues = $submission->data[$maximizer_component->cid]['value'];
+        }
+        else {
+          $formvalues = $submission->data[$maximizer_component->cid];
+        }
+
+        // Usually there will just be one value, per field, but this could also be
+        // a multi-value field so we need to loop through in case there is more than one
+        foreach ($formvalues as $formvalue) {
+          // Seperate out each multiple value with a space and append to our value after checking
+          // to make sure there is no 'safe-key' mapping.
+          $value .= ' ' . webform2maximizer_check_safe_key($maximizer_component, $formvalue, $node);
+        }
+      }
+
+
+      // Only include key if it has a valid value.
+      // Blank values (Such as opt-out checkboxes that were NOT checked) should not be sent.
+      if (trim($value)) {
+        // Now trim it up
+		//$data_addressbook[$key] = trim($value);
+
+		$addressbook_basic_fields = array(
+		  'Email',
+		  'MrMrs',
+		  'FirstName',
+		  'MiddleName',
+		  'LastName',
+		  'Salutation',
+		  'Company',
+		  'Position',
+		  'Department',
+		  'Division',
+		  'Address1',
+		  'Address2',
+		  'Town',
+		  'County',
+		  'Postcode',
+		  'Country',
+		  'Phone1',
+		  'Phone2',
+		  'Phone3',
+		  'Phone4',
+		  'Website',
+		);
+		$opportunity_basic_fields = array(
+		  'Objective',
+		  'ProductsServices',
+		  'Categories',
+		  'Stage',
+		  'Status',
+		  'StartDate',
+		  'CloseDate',
+		  'SalesTeam',
+		  'Leader',
+		  'Revenue',
+		  'Profit',
+		  'Description',
+		);
+		$addressbook_udf_fields = array(
+		  'Customer Interests',
+		  'Partner Interests',
+		  'Sales\Lead source',
+		  'Sales\Lead status',
+		  'Team you support',
+		  'Historic enquiries',
+		  'Travel Studio Reference',
+		  'Old Travel Studio Reference',
+		  'Sports Interest',
+		  'Flag',
+		  'Company protected by',
+		  'Mosaic code',
+		  'Date of birth',
+		  'Gender',
+		  'Brand',
+		  'Loyalty member status',
+		  'Additional info',
+		  'Dotmailer Account',
+		  'Key Account Manager',
+		  'Corporate Interest',
+		  'AB Enquiry type',
+		  'AB Enquiry source',
+		  'AB Event title',
+		  'AB Package URL',
+		  'AB_UTMs\AB Source',
+		  'AB_UTMs\AB Medium',
+		  'AB_UTMs\AB Term',
+		  'AB_UTMs\AB Campaign',
+		  'AB_UTMs\AB Content',
+		  'Do Not Solicit By',
+		  'Category',
+		);
+
+		//by default, set send_opportunity to 0 as some webforms will send AddressBook data only
+		$send_opportunity = 0;
+		
+		if ( in_array($key, $addressbook_basic_fields ) ) {
+		  $data_addressbook[$key] = trim($value);
+		} elseif ( in_array($key, $opportunity_basic_fields ) ) {
+		  $data_opportunity[$key] = trim($value);
+		  $send_opportunity = 1;
+		} elseif ( in_array($key, $addressbook_udf_fields ) ) {
+		  $data_addressbook_udfs['UserDefinedFieldPair'][] = array(
+			'FolderPath' => $key,
+			'Value' => trim($value)
+		  );
+		} else {
+		  $data_opportunity_udfs['UserDefinedFieldPair'][] = array(
+			'FolderPath' => $key,
+			'Value' => trim($value)
+		  );
+		  $send_opportunity = 1;
+		}
+      }
+    }
+	
+	if ($send_opportunity > 0) {
+	  //we are already sending opportunity data, so might as well send the Google Analytics UTM info also
+	  if (isset($_COOKIE["utminfo"])) {
+	    $utm_info = filter_xss($_COOKIE["utminfo"]);
+		$pieces = explode("-", $utm_info);
+        $pieces = array_pad($pieces, 12, 'na');
+		$utm_source = $pieces[1]; 
+		$utm_medium = $pieces[3];
+		$utm_term = $pieces[5];
+		$utm_content = $pieces[7];
+		$utm_campaign = $pieces[9];
+		$referring_site = $pieces[11];
+		$data_opportunity_udfs['UserDefinedFieldPair'][] = array(
+			'FolderPath' => 'UTMs\Source',
+			'Value' => $utm_source
+		);
+		$data_opportunity_udfs['UserDefinedFieldPair'][] = array(
+			'FolderPath' => 'UTMs\Medium',
+			'Value' => $utm_medium
+		);
+		$data_opportunity_udfs['UserDefinedFieldPair'][] = array(
+			'FolderPath' => 'UTMs\Term',
+			'Value' => $utm_term
+		);
+		$data_opportunity_udfs['UserDefinedFieldPair'][] = array(
+			'FolderPath' => 'UTMs\Content',
+			'Value' => $utm_content
+		);
+		$data_opportunity_udfs['UserDefinedFieldPair'][] = array(
+			'FolderPath' => 'UTMs\Campaign',
+			'Value' => $utm_campaign
+		);
+		$data_opportunity_udfs['UserDefinedFieldPair'][] = array(
+			'FolderPath' => 'UTMs\Referring site',
+			'Value' => $referring_site
+		);
+		if (isset($utm_medium) && strstr($utm_medium,'cpc')){
+			$data_opportunity_udfs['UserDefinedFieldPair'][] = array(
+				'FolderPath' => 'Enquiry source',
+				'Value' => 'PPC'
+			);
+		} else if (isset($utm_medium) && strstr($utm_medium,'email')){
+			$data_opportunity_udfs['UserDefinedFieldPair'][] = array(
+				'FolderPath' => 'Enquiry source',
+				'Value' => 'Email - from marketing'
+			);
+		}
+	  }
+	} else {
+	  //we are not sending opportunity data, so the UTM information goes into the AB_UTMs fields
+	  if (isset($_COOKIE["utminfo"])) {
+	    $utm_info = filter_xss($_COOKIE["utminfo"]);
+		$pieces = explode("-", $utm_info);
+		$utm_source = $pieces[1]; 
+		$utm_medium = $pieces[3];
+		$utm_term = $pieces[5];
+		$utm_content = $pieces[7];
+		$utm_campaign = $pieces[9];
+		$referring_site = $pieces[11];
+		$data_addressbook_udfs['UserDefinedFieldPair'][] = array(
+			'FolderPath' => 'AB_UTMs\AB Source',
+			'Value' => $utm_source
+		);
+		$data_addressbook_udfs['UserDefinedFieldPair'][] = array(
+			'FolderPath' => 'AB_UTMs\AB Medium',
+			'Value' => $utm_medium
+		);
+		$data_addressbook_udfs['UserDefinedFieldPair'][] = array(
+			'FolderPath' => 'AB_UTMs\AB Term',
+			'Value' => $utm_term
+		);
+		$data_addressbook_udfs['UserDefinedFieldPair'][] = array(
+			'FolderPath' => 'AB_UTMs\AB Content',
+			'Value' => $utm_content
+		);
+		$data_addressbook_udfs['UserDefinedFieldPair'][] = array(
+			'FolderPath' => 'AB_UTMs\AB Campaign',
+			'Value' => $utm_campaign
+		);
+		$data_addressbook_udfs['UserDefinedFieldPair'][] = array(
+			'FolderPath' => 'AB_UTMs\AB Referring site',
+			'Value' => $referring_site
+		);
+		if (isset($utm_medium) && strstr($utm_medium,'cpc')){
+			$data_addressbook_udfs['UserDefinedFieldPair'][] = array(
+				'FolderPath' => 'AB Enquiry source',
+				'Value' => 'PPC'
+			);
+		} else if (isset($utm_medium) && strstr($utm_medium,'email')){
+			$data_addressbook_udfs['UserDefinedFieldPair'][] = array(
+				'FolderPath' => 'AB Enquiry source',
+				'Value' => 'Email - from marketing'
+			);
+		}
+	  }	
+	}
+	
+	//static oportunity field
+	//removing them, as some webforms will be passed with address book only, not opportunity.
+	//$data_opportunity['Leader'] = 'Neil Rayer';
+	//$data_opportunity['SalesTeam'] = 'Gullivers Supporters';
+	
+
+	
+	
+
+	if( !empty( $data_addressbook_udfs ) ) {
+	  $data_addressbook['UserDefinedFields'] = $data_addressbook_udfs;
+	}
+	
+	if( !empty( $data_opportunity_udfs ) ) {
+	  $data_opportunity['UserDefinedFields'] = $data_opportunity_udfs;
+	}
+	
+    // Cast the data array as an object
+    //$data_addressbook = (Object)$data;
+	if ($send_opportunity > 0) {
+		$AddressBookData = array('AddressBookName'=>'Supporters','AddressBook'=>$data_addressbook,'Opportunity'=>$data_opportunity);
+	} else {
+		$AddressBookData = array('AddressBookName'=>'Supporters','AddressBook'=>$data_addressbook);
+	}
+	//$AddressBookData = (Object)$AddressBookData;
+	//dsm($AddressBookData);
+	
+	
+    try {
+      $client = new SoapClient($maximizerurl, array('cache_wsdl' => WSDL_CACHE_NONE, 'trace' => TRUE));
+	  
+	  $auth = array(
+		'Username' => 'WebImport',
+		'Password' => 'Pa55w0rd',
+	  );
+	  $header = new SoapHeader('http://localhost/', 'AuthHeader', $auth, FALSE);
+	  $client->__setSoapHeaders($header);
+      $result = $client->MaxData(array('maxData' => $AddressBookData));
+
+      // Check Result
+      if (!empty($result->MaxDataResult)) {
+        $message = 'Valid response received from maximizer<br />';
+        $args = array();
+        watchdog('Webform2maximizer', $message, $args, WATCHDOG_DEBUG);
+      }
+    }
+    catch (Exception $e) {
+      $message = 'Failed to send request to !url the error was !code';
+      $args = array('url' => $maximizerurl, 'code' => $e);
+      watchdog('Webform2maximizer', $message, $args, WATCHDOG_ERROR);
+    }
+	
+	
+  }
+}
+
+/**
+ * Check for a safe_key mapping for a webform value.
+ *
+ * This method will check the node and safekey value given and will attempt to lookup a mapping for this value.
+ *
+ * @param $maximizer_component
+ *   The webform2maximizer component from which this value vame from
+ * @param $value
+ *   The actual value from the form which may be a safe_key
+ * @param $node
+ *   The Webform node on which this submission was made.
+ *
+ * @return Returns either the original value passed in as $value, or if a safe_key for this node and componenet was found
+ * then returns the actual value that this safe_key refers to.
+ */
+function webform2maximizer_check_safe_key($maximizer_component, $value, $node) {
+  //Speed up the case where value is blank
+  if (!$value) {
+    return $value;
+  }
+
+  if (array_key_exists('components', $node->webform) && array_key_exists($maximizer_component->cid, $node->webform['components']) ) {
+    $component = $node->webform['components'][$maximizer_component->cid];
+
+    //If there is an extra 'items' then we need to check those values.
+    if (array_key_exists('extra', $component) && array_key_exists('items', $component['extra'])) {
+      $items = explode("\n", $component['extra']['items']);
+
+      //Check each item until our key matches
+      foreach ($items as $item) {
+        $position = strpos($item, '|');
+        if ($position) {
+          $key = substr($item, 0, $position);
+          if ($key == $value) {
+            $value = trim(substr($item, 0, $position));
+            break; //We matched we can stop
+          }
+        }
+      }
+    }
+  }
+  //Return either the original value, or if a safe_key mapping was found, return the value it was mapped to.
+  return $value;
+}
+
+/**
+ * Respond to a Webform component being deleted.
+ */
+function webform2maximizer_webform_component_delete($component) {
+  db_delete('webform2maximizer_component')
+    ->condition('nid', $component['nid'])
+    ->condition('cid', $component['cid'])
+    ->execute();
+}
+
+
+/**
+ * Respond to a Webform node deleted.
+ */
+function webform2maximizer_node_delete($node) {
+  //If the node is a webform we have some rows to delete first
+  if ($node->type == 'webform') {
+    db_delete('webform2maximizer_component')
+      ->condition('nid', $node->nid)
+      ->execute();
+
+    db_delete('webform2maximizer_webform')
+      ->condition('nid', $node->nid)
+      ->execute();
+  }
+}
