@@ -1,0 +1,752 @@
+// Universal UX States
+	
+	// Navigation List
+
+		html.touchevents nav ul.menu li.expanded.is-open,
+		html.no-touchevents nav ul.menu li.expanded:hover {
+			background-color:	$orange-b;
+
+			@media screen and (min-width: 52rem) {
+				background-color:	transparent;
+			}
+
+			> ul.menu {
+				opacity: 	1;
+				max-height:		24em;
+				overflow:		visible;
+
+				li {
+					transform:	translateY(0);
+					opacity:	1;
+					overflow:	visible;
+					pointer-events:	auto;
+				}
+			}
+
+			a {
+				pointer-events:	auto;
+			}
+		}
+
+		html.touchevents nav ul.menu li.expanded.menu-depth-2.is-open,
+		html.no-touchevents nav ul.menu li.expanded.menu-depth-2:hover {
+			background-color:	$orange-b;
+
+			// @media screen and (min-width: 52rem) {
+			// 	background-color:	transparent;
+			// }
+
+			// > ul.menu {
+			// 	opacity: 	1;
+			// 	max-height:		24em;
+			// 	overflow:		visible;
+
+			// 	li {
+			// 		transform:	translateY(0);
+			// 		opacity:	1;
+			// 		overflow:	visible;
+			// 	}
+			// }
+
+			// a {
+			// 	pointer-events:	auto;
+			// }
+		}
+
+		html.touchevents nav ul.menu li.menu-depth-2.expanded.is-open {
+			background-color:	$orange-b;
+		}
+
+		html.touchevents nav ul.menu > li.is-open,
+		html.no-touchevents nav ul.menu > li:hover {
+			// background-color:	initial;
+		}
+
+		html.touchevents .card.is-open,
+		html.no-touchevents .card:hover {
+			.img {}
+		}
+
+		html.no-touchevents .card:hover:not(.multipage)
+		html.touchevents .card.is-open:not(.multipage) {
+			transform:		scale(1.0625);
+			cursor:			pointer;
+			z-index: 		99;
+
+			.img .icon-button {
+
+			}
+		}
+
+		html.touchevents nav li:active,
+		html.no-touchevents nav li:hover {
+			background-color:		$orange-b;
+		}
+
+		html.touchevents nav li.menu-depth-3:active,
+		html.no-touchevents nav li.menu-depth-3:hover {
+			background-color:		$orange-a;
+		}
+
+	// Cards
+
+		html.touchevents:not(.multipage),
+		html.no-touchevents:not(.multipage) {
+			.card:active:not(.multipage) {
+				> div {
+					// transform:	scale(0.975);	
+					// filter:		brightness(0.9);
+				}
+
+				.info {
+					// background-color:	$orange-b;
+				}
+			}
+		}
+
+		html.touchevents .card.is-open:not(.multipage),
+		html.no-touchevents .card:hover:not(.multipage) {
+			z-index: 		998;
+			box-shadow:		0 0.5em 4em 0 rgba(0,0,0,0.2);
+		}
+
+		html.touchevents .card.is-open:not(.multipage) > div,
+		html.no-touchevents .card:hover:not(.multipage) > div {
+			// box-shadow:		0 0.5em 4em 0 rgba(0,0,0,0.2);
+		}
+
+		html.touchevents .card.is-open:not(.multipage) > div .img,
+		html.no-touchevents .card:hover:not(.multipage) > div .img {
+			background-color:	$orange-b-dark;
+			// filter:				saturate(0);
+			// z-index: 			98;
+			// position: 			relative;
+
+			p {
+				opacity:		1;
+				transform:		translateY(-50%);
+				top:			50%;
+			}
+
+			h3 {
+				transform:		translateY(100%);
+			}
+		}
+
+		html.touchevents .card.is-open:not(.multipage) > div .img.gif,
+		html.no-touchevents .card:hover:not(.multipage) > div .img.gif {
+			// display:	block;
+			// opacity:	1;
+			transform:			translateY(0);
+			background-color:	initial;
+
+
+			h3 {
+				display:	none;
+			}
+		}
+
+		html.touchevents .card.is-open:not(.multipage) > div > a,
+		html.no-touchevents .card:not(.multipage):hover > div > a {
+			.img.gif ~ .img,
+			.img.gif ~ .img  {
+				// opacity:	0;
+				background-color:	transparent;
+				// display:	none;
+				transform:			translateY(calc(100% + 2.5em));
+			}
+		}
+
+	// Icon Lists
+
+		html.touchevents ul.icon-list li.is-open,
+		html.no-touchevents ul.icon-list li:hover {
+			box-shadow:			0 0 0 2px transparent inset;
+			z-index: 			999;
+			transition:		background-color $fast-cubic,
+							border-radius 0.4s step-end,
+							z-index 0.4s step-start;
+			border-radius:		$relSmallGutter $relSmallGutter 0 0;
+
+			.base-info p {
+				color:		$orange-a;
+			}
+
+			.more {
+				max-height:			24em;
+			}
+
+			.base-info {
+				box-shadow: 		0 0 0 2px transparent inset;
+				transition:			background-color $fast-cubic,
+									border-radius 0.4s step-start;
+			}
+
+			.base-info p {
+				width:			100%;
+			}
+
+			.base-info .fa,
+			.base-info img.svg {
+				width:			0;
+				height:			0;
+			}
+		}
+
+	// Segmented Form
+
+		.form-segment.is-open {
+			max-height:				$relBaseSize * 24;
+		}
+
+		.form-segment.fa-chevron-left {
+			transform:				rotate(-90deg);
+		}
+
+	// Itineraries
+
+		ul.field-name-field-itinerary li,
+		ul.itinerary-list li {
+			&.is-open {
+				max-height:			48em;
+
+				h4 .fa {
+					transform:		rotate(-90deg);
+				}
+			}
+
+			&:hover h4 {
+				background-color:	darken(saturate($orange-b, 5%), 5%);
+			}
+
+			&:active h4 {
+				background-color:	$orange-a;
+			}
+		}
+
+	// Drop-Down Button
+
+		.no-touchevents header ul.text-button.drop-down:hover > li,
+		.touchevents header ul.text-button.drop-down.is-open > li {
+			ul {
+				height:		9em;
+				opacity:	1;
+
+				li {
+					transform:	translateY(0);
+					opacity:		1;
+				}
+			}
+		}
+
+	// Text Buttons
+
+		html.touchevents,
+		html.no-touchevents {
+			.text-button.orange-a:active {
+				background-color:	darken($orange-a, 10%);
+			}
+
+			.text-button.yellow-a:active {
+				background-color:	$orange-b;
+			} 
+		}
+
+// Touch Devices
+
+	html.touchevents {
+
+		// Navigation
+
+			nav ul.menu > li ul li ul {
+				position:		relative;
+				// margin:			0;
+				left:			0;
+				transition:		opacity $fast-cubic,
+	    						left $fast-cubic,
+	    						max-height $fast-cubic;
+			}
+
+		// Header Drop-Down Button
+
+			header ul.text-button.drop-down:active {
+				background:		$orange-a;
+			}
+
+			header ul.text-button.drop-down ul li:active {
+				background-color:	$orange-a;
+			}
+		
+		// Buttons
+
+		// Cards
+
+			.card > div > a {
+				// pointer-events: none;
+				// transition:		pointer-events step-end 0.4s;
+				text-decoration: none;
+				pointer-events:	none;
+			}
+
+			.card.is-open:not(.multipage) > div > a {
+				pointer-events:	auto;
+
+				.img-wrapper h3,
+				.img h3 {
+					transform:	translateY(100%);
+					opacity:	0;
+				}
+
+				.img-wrapper p,
+				.img p {
+					transform:	translateY(-50%);
+					top:		50%;
+					opacity:	1;
+					// font-weight:$light;
+				}
+
+				.img.gif ~ .img,
+				.img.gif ~ .img  {
+					// opacity:	0;
+					background-color:	transparent;
+					// display:	none;
+				}
+
+				
+
+
+				.img-wrapper {
+					// border:		1px solid $grey-dark;
+					// border-top:	none;
+				}
+
+				.info p {
+					// color:		$green-a;
+					// transform:	translateY(-0.5em);
+
+					&.stars {
+						color:	$yellow-a;
+					}
+				}
+
+				.info ul {
+					max-height:	99rem;
+					padding-bottom:	$relLargeGutter;
+				}
+			}
+
+			.card.is-open:not(.multipage) {
+				.img-wrapper .icon-button,
+				.img .icon-button {
+					transform:	translateY(0%);
+					// top:		50%;
+					opacity:	1;
+					// font-weight:$light;
+					transition:	transform $fast-cubic,
+								top $fast-cubic,
+								opacity $fast-cubic;
+				}
+			}
+
+			.card.is-open:not(.multipage) > div {
+				.info {
+					// transform:	translateY(2.25em);
+					// background-color:	$white;
+					// box-shadow: 0 0.5em 4em 0 rgba(0, 0, 0, 0.2);
+					// border-color:	$grey-dark;
+					// border:		1px solid $grey-dark;
+					// border-top:	none;
+
+					p {
+						color:		$black;
+					}
+				}
+			}
+
+			.card.multipage.is-open {
+				p.blurb {
+				    opacity: 1;
+				    top: 50%;
+				    transform: translateY(-50%);
+				}
+
+				.img {
+					background-color:	$orange-b-dark;
+				}
+			}
+	}
+
+// Pointer Devices
+
+	html.no-touchevents {
+		
+		// Links
+
+			a {
+				&:active {
+					// color:				darken($orange-a, 5%);
+					transform:				translateY(2px);
+				}
+			}
+
+		// Buttons
+
+			a.button.solid {
+				&:hover {
+					color:			$white;
+					// background-color:	$orange-b;
+				}
+			}
+
+		// Text Buttons
+
+			.text-button,
+			input[type="submit"] {
+				&:hover {
+					background-color:	saturate(darken($orange-a, 5%), 2.5%);	
+				}
+
+				&.orange-a {
+					&:hover {
+					
+					}
+
+					&:active {
+						background-color: 	saturate($orange-a, 15%);
+					}
+				}
+
+				&.orange-b {
+					&:hover {
+						background-color:	$orange-c;
+					}
+
+					&:active {
+						background-color: 	saturate($orange-b, 15%);
+					}
+				}
+
+				& a.outline,
+				&.orange-a.outline {
+					&:hover {
+						background-color:	$orange-c;
+						// color:				$orange-a;
+					}
+
+					&:active {
+						background-color: 	saturate($orange-a, 15%);
+					}
+				}
+
+				&.yellow-a {
+					&:hover {
+						background-color:	saturate(adjust-hue($yellow-a,-2.5%), 5%);
+					}
+
+					&:active {
+						background-color: 	saturate($yellow-a, 15%);
+					}
+				}
+
+				&.green-a {
+					&:hover {
+						background-color:	$green-b;
+					}
+
+					&:active {
+						background-color: 	saturate($green-a, 15%);
+					}
+				}
+
+				&.blue-a {
+					&:hover {
+						background-color:	$blue-b;
+					}
+
+					&:active {
+						background-color: 	saturate($blue-a, 15%);
+					}
+				}
+
+				&.purple-a {
+					&:hover {
+						background-color:	$purple-b;
+					}
+
+					&:active {
+						background-color: 	saturate($purple-a, 15%);
+					}
+				}
+			}
+	
+		// Navigation Links
+
+			nav a[href] {
+				&:hover {
+					// border-bottom:		2px solid $white;
+					text-decoration: 	none;
+				}
+
+				&:active {
+					// border-bottom:		2px solid $white;
+					// color:				$orange-a;
+				}
+			}
+
+			footer a {
+				&:hover {
+					color:	$orange-a;
+				}
+			}
+
+			footer li {
+				&:hover {
+					background-color:	initial;
+				}
+			}
+
+			nav li.menu-depth-2:hover {
+				background-color:		$orange-b;
+			}
+
+
+			nav li:hover:active,
+			nav ul.menu li.expanded.is-open:hover:active {
+				// background-color:		darken($orange-a, 5%);
+			}
+
+		// Sport Button Text
+
+			.sport-button:hover p {
+				transform:	scale(1.125);
+				color:		$green-a;
+			}
+
+		// Search Button
+
+			.block-search button,
+			.block-search input[type="submit"],
+			.block-search input.form-submit {
+				&:hover {
+			    	background-color:	$yellow-c;
+			    	color:				$orange-a;
+			    }
+			}
+	
+		// Cards
+
+			.card:hover:not(.multipage) > div > a {
+				// pointer-events: auto;
+			}
+
+			.card:hover:not(.multipage) > div,
+			.card {
+
+			}
+
+			.card:not(.multipage) .info a:hover {
+				text-decoration: none;
+
+				h3, p {
+					text-decoration:	underline;
+				}
+			}
+
+			.card.multipage:hover {
+				> div {
+					// transform:	initial;
+					// box-shadow:	initial;
+					// z-index: 	initial;
+				}
+
+				> div .img {
+					background-color:	$orange-b-dark;
+
+					p {
+						// padding:	0 3rem;
+					}
+				}
+
+				p.blurb {
+					opacity:		1;
+					top:			50%;
+					transform:		translateY(-50%);
+				}
+			}
+	
+		// Icon Lists
+
+			ul.icon-list li:hover {
+				// transform: scale(1.025);
+			    // transition:		transform $fast-cubic,
+			    				// box-shadow $fast-cubic,
+			    				// background-color $fast-cubic,
+			    				// max-height $fast-cubic;
+
+			    .base-info {
+			    	// background-color:	darken($grey-very-light, 5%);
+				    // box-shadow: 0 0 0 2px transparent inset;
+				    // transition:		background-color $fast-cubic,
+									// border-radius $fast-cubic,
+									// border-radius 0.4s step-end;
+			    }
+
+			    .fa, p {
+			    	// color:		$white;
+			    }
+
+			    .more {
+			    	// max-height:		1em;
+			    	// transform:		scaleY(1);
+			    	// transition: 	transform $fast-cubic,
+				    				// max-height $fast-cubic,
+				    				// padding $fast-cubic;
+			    }
+			}
+
+			ul.icon-list li.is-open:hover {
+				// transition:		transform $very-fast-cubic,
+			    				// box-shadow $fast-cubic,
+			    				// background-color $very-fast-cubic,
+			    				// max-height $fast-cubic;
+
+			   	.base-info {
+					// max-height:			$relBaseSize * 12;
+			   		// transition:		background-color $fast-cubic,
+									// border-radius $fast-cubic,
+									// border-radius 0.4s step-end;
+			   	}
+
+			   	.more {
+			    	// max-height:		12em;
+			    	// transform:		scaleY(1);
+			    	// transition: 	transform $fast-cubic,
+				    // 				max-height $fast-cubic,
+				    // 				padding $fast-cubic;
+			    }
+			}
+	
+		// Drop-Down Link
+
+			header ul.text-button.drop-down ul li:hover {
+				background-color:		$orange-a;
+			}
+	}
+
+// Redamore
+
+	.card.team + div {
+		&.is-open {
+			max-height: 			100em;
+
+			&:after {
+				opacity:			0;
+				pointer-events:		none;
+			}
+		}
+	}
+
+html.no-touchevents {
+	.card > div > a {
+				// pointer-events: none;
+				// transition:		pointer-events step-end 0.4s;
+				text-decoration: none;
+				pointer-events:	none;
+			}
+
+			.card:hover:not(.multipage) > div > a {
+				pointer-events:	auto;
+
+				.img-wrapper h3,
+				.img h3 {
+					transform:	translateY(100%);
+					opacity:	0;
+				}
+
+				.img-wrapper p,
+				.img p {
+					transform:	translateY(-50%);
+					top:		50%;
+					opacity:	1;
+					// font-weight:$light;
+				}
+
+				.img.gif ~ .img,
+				.img.gif ~ .img  {
+					// opacity:	0;
+					background-color:	transparent;
+					// display:	none;
+				}
+
+				
+
+
+				.img-wrapper {
+					// border:		1px solid $grey-dark;
+					// border-top:	none;
+				}
+
+				.info p {
+					// color:		$green-a;
+					// transform:	translateY(-0.5em);
+
+					&.stars {
+						color:	$yellow-a;
+					}
+				}
+
+				.info ul {
+					max-height:	99rem;
+					padding-bottom:	$relLargeGutter;
+				}
+			}
+
+			.card:hover:not(.multipage) {
+				.img-wrapper .icon-button,
+				.img .icon-button {
+					transform:	translateY(0%);
+					// top:		50%;
+					opacity:	1;
+					// font-weight:$light;
+					transition:	transform $fast-cubic,
+								top $fast-cubic,
+								opacity $fast-cubic;
+				}
+			}
+
+			.card:hover:not(.multipage) > div {
+				.info {
+					// transform:	translateY(2.25em);
+					// background-color:	$white;
+					// box-shadow: 0 0.5em 4em 0 rgba(0, 0, 0, 0.2);
+					// border-color:	$grey-dark;
+					// border:		1px solid $grey-dark;
+					// border-top:	none;
+
+					p {
+						color:		$black;
+					}
+				}
+			}
+
+			.card.multipage:hover {
+				p.blurb {
+				    opacity: 1;
+				    top: 50%;
+				    transform: translateY(-50%);
+				}
+
+				.img {
+					background-color:	$orange-b-dark;
+				}
+			}}
+
+html.no-touchevents p a:hover,
+p a:focus {
+	color:			$purple-a;
+	box-shadow: inset 0 -1px 0 0 white, inset 0 -3px 0 0 $purple-b;
+}
+
+p a:active {
+	transform:		translateY(2px);
+}

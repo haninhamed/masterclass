@@ -1,0 +1,365 @@
+// Tesitmonial Slider
+
+	@keyframes testimonialSlideB {
+		0% {
+			left:			 0;
+		}
+
+		20% {
+			left:			 0;
+		}
+
+		30% {
+			left:			 calc(-100% - 1rem);
+		}
+
+		70% {
+			left:			 calc(-100% - 1rem);
+		}
+
+		80% {
+			left:			 0;
+		}
+
+		100% {
+			left:			 0;
+		}
+	}
+
+	@keyframes testimonialSlideC {
+		0% {
+			left:			 0;
+		}
+
+		10% {
+			left:			 0;
+		}
+
+		15% {
+			left:			 calc(-100% - 1rem);
+		}
+
+		35% {
+			left:			 calc(-100% - 1rem);
+		}
+
+		40% {
+			left:			 calc(-200% - 2rem);
+		}
+
+		60% {
+			left:			 calc(-200% - 2rem);
+		}
+
+		65% {
+			left:			 calc(-100% - 1rem);
+		}
+
+		85% {
+			left:			 calc(-100% - 1rem);
+		}
+
+		90% {
+			left:			 0;
+		}
+
+		100% {
+			left:			 0;
+		}
+	}
+
+	@keyframes testimonialSlideD {
+		0% {
+			left:			 0;
+		}
+
+		6.666% {
+			left:			 0;
+		}
+
+		10% {
+			left:			 calc(-100% - 1rem);
+		}
+
+		23.333% {
+			left:			 calc(-100% - 1rem);
+		}
+
+		26.666% {
+			left:			 calc(-200% - 2rem);
+		}
+
+		40% {
+			left:			 calc(-200% - 2rem);
+		}
+
+		43.333% {
+			left:			 calc(-300% - 3rem);
+		}
+
+		56.666% {
+			left:			 calc(-300% - 3rem);
+		}
+
+		60% {
+			left:			 calc(-200% - 2rem);
+		}
+
+		73.333% {
+			left:			 calc(-200% - 2rem);
+		}
+
+		76.666% {
+			left:			 calc(-100% - 1rem);
+		}
+
+		90% {
+			left:			 calc(-100% - 1rem);
+		}
+
+		93.333% {
+			left:			 0;
+		}
+
+		100% {
+			left:			 0;
+		}
+	}
+
+	@keyframes testimonialSlideE {
+		0% {
+			left:			 0;
+		}
+
+		5% {
+			left:			 0;
+		}
+
+		7.5% {
+			left:			 calc(-100% - 1rem);
+		}
+
+		17.5% {
+			left:			 calc(-100% - 1rem);
+		}
+
+		20% {
+			left:			 calc(-200% - 2rem);
+		}
+
+		30% {
+			left:			 calc(-200% - 2rem);
+		}
+
+		32.5% {
+			left:			 calc(-300% - 3rem);
+		}
+
+		42.5% {
+			left:			 calc(-300% - 3rem);
+		}
+
+		45% {
+			left:			 calc(-400% - 4rem);
+		}
+
+		55% {
+			left:			 calc(-400% - 4rem);
+		}
+
+		57.5% {
+			left:			 calc(-300% - 3rem);
+		}
+
+		67.5% {
+			left:			 calc(-300% - 3rem);
+		}
+
+		70% {
+			left:			 calc(-200% - 2rem);
+		}
+
+		80% {
+			left:			 calc(-200% - 2rem);
+		}
+
+		82.5% {
+			left:			 calc(-100% - 1rem);
+		}
+
+		92.5% {
+			left:			 calc(-100% - 1rem);
+		}
+
+		95% {
+			left:			 0;
+		}
+
+		100% {
+			left:			 0;
+		}
+	}
+
+// SVG Animations
+
+	// Hockey Animation
+
+		@keyframes hockeyBall {
+			0% {
+				transform:		translateY(0%);
+			}
+
+			50% {
+				transform:		translateY(-100%);
+			}
+
+			100% {
+				transform:		translateY(200%);
+			}
+		}
+
+		@keyframes hockeyStickR {
+			0% {
+				transform: 		initial;
+			    transform-origin: top right;
+			}
+
+			50% {
+				transform: 		rotate(-5deg) translate(-5%, 5%);
+			    transform-origin: top right;
+			}
+
+			100% {
+				transform: 		rotate(2deg) translate(5%, -2%);
+			    transform-origin: top right;
+			}
+		}
+
+		@keyframes hockeyStickL {
+			0% {
+				transform: 		initial;
+			    transform-origin: top left;
+			}
+
+			50% {
+				transform: 		rotate(5deg) translate(5%, 5%);
+			    transform-origin: top right;
+			}
+
+			100% {
+				transform: 		rotate(-2deg) translate(-5%, -2%);
+			    transform-origin: top right;
+			}
+		}
+
+	// Netball Animation
+
+		@keyframes netball {
+			0% {
+				transform:		scaleY(1) translateY(0%);
+			}
+
+			50% {
+				transform:		scaleY(1) translateY(-50%);
+			}
+
+			75% {
+				transform:		scaleY(1) translateY(25%);
+			}
+
+			85% {
+				transform:		scaleY(0.85) translateY(0%);
+			}
+
+			100% {
+				transform:		scaleY(1) translateY(0%);
+			}
+		}
+
+	// Swimming Animation
+
+		@keyframes swimmingT {
+			0% {
+				transform:		translateX(0);
+			}
+
+			50% {
+				transform:		translateX(-0.25em)
+			}
+
+			// 75% {
+			// 	transform:		translate(-150.182 -191.239)
+			// }
+
+			// 85% {
+			// 	transform:		translate(-130.182 -191.239)
+			// }
+
+			100% {
+				transform:		translateX(0.5em);
+			}
+		}
+
+		@keyframes swimmingB {
+			0% {
+				transform:		translateX(0);
+			}
+
+			50% {
+				transform:		translateX(0.5em)
+			}
+
+			// 75% {
+			// 	transform:		translate(-130.182 -191.239)
+			// }
+
+			// 85% {
+			// 	transform:		translate(-150.182 -191.239)
+			// }
+
+			100% {
+				transform:		translateX(-0.25em);
+			}
+		}
+
+	// Rugby Animation
+
+		@keyframes rugby {
+			0% {
+				transform:		rotate(0deg);
+			}
+
+			100% {
+				transform:		rotate(-36deg);
+			}
+
+			// 70% {
+			// 	transform:		translateY(0em)
+			// 					scale(0.875)
+			// 					rotate(-720deg);
+			// }
+
+			// 70% {
+			// 	transform:		translateY(-2em)
+			// 					scale(0.875)
+			// 					rotate(-1080deg);
+			// }
+
+			// 75% {
+			// 	transform:		translateY(0em)
+			// 					scale(0.875)
+			// 					rotate(-1080deg);
+			// }
+
+			// 75% {
+			// 	transform:		translate(-130.182 -191.239)
+			// }
+
+			// 85% {
+			// 	transform:		translate(-150.182 -191.239)
+			// }
+
+			// 100% {
+			// 	transform:		translateX(-0.25em);
+			// }
+		}

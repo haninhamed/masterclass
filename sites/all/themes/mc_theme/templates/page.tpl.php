@@ -148,7 +148,7 @@
     <?php print render($page['secondary_content']); ?>
 
     <section class="splash team flex--box column acenter jcenter">
-      <div class="cover-img widescreen--wrapper"> 
+      <div class="cover-img widescreen--wrapper" style="background-image:none;"> 
       <?php 
          if (isset($node)) {
          $video_field = field_view_field('node', $node, 'field_cover_video', array('label'=>'hidden'));
@@ -243,7 +243,10 @@
           <div class="col"><?php print render($page['footer1']); ?></div>
           <div class="col"><?php print render($page['footer2']); ?></div>
           <div class="col"><?php print render($page['footer3']); ?></div>
+          
+          <p>&#169; <?php echo date("Y") ?> MasterClass Sports Tours</p>
         </div>
+
       </footer>
     
 

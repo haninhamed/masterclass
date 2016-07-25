@@ -11,7 +11,7 @@
   <h3><?php print $title; ?></h3>
 <?php endif; ?>
 
-<div class="card-wrapper flex--box row astart jbetween wrap">
+<div class="card-wrapper flex--box row astart jstart wrap">
     <?php foreach ($rows as $id => $row): ?>
       <div<?php if ($classes_array[$id]) { print ' class="' . $classes_array[$id] .'"';  } ?>>
         <?php print $row; ?>

@@ -1,0 +1,246 @@
+// style_typography.scss
+
+// Font Specifications
+
+	h1, h2, h3, h4, h5, h6, p {
+		display:		inline-block;
+		margin:			0;
+		font-weight:	normal;
+		font-family:	$displayType;
+	}
+
+	// Header Text Elements
+
+		h1 {
+		    width:			100%;
+			margin:			$relBaseSize 0 $relBaseSize * 0.4;
+			// padding:		0 $absBaseSize * 0.625;
+		    // font-family: 	$textType;
+		    font-size: 		$relBaseSize * 1.875;
+		    font-weight: 	$bold;
+		    line-height: 	$relBaseSize * 1.25;
+			// text-align:		center;
+			letter-spacing:	-0.047em;
+			// max-width: 		24rem;
+			color:			$orange-a;
+
+		    @media screen and (min-width: 48rem) {
+		    	width:		90vw;
+			}
+
+			@media screen and (min-width: 48rem) {
+		    	width:		80vw;
+			}
+		}
+
+		// .text-button + h1 {
+			// margin-top:		
+		// }
+
+		h2 {
+			// width:			100%;
+			// margin:			$absLargeGutter $absBaseSize $absBaseLine;
+			// font-family:	$displayType;
+			// font-size:		$absBaseSize * 1.5;
+			// line-height:	$absLargeBaseLine;
+			// text-align:		left;
+			// text-transform:	uppercase;
+			// letter-spacing:	0.1em;
+
+			width:			100%;
+			// font-family:	$textType;
+			font-size:		$relBaseSize * 1.5;
+			// font-size:		$relBaseSize * 2;
+			font-weight:	$bold;
+			line-height: 	$relLargeBaseLine;
+			// line-height:	$relBaseSize * 1.5;
+			// text-align:		center;
+			// color:			$white;
+
+			// @media screen and (min-width: 1024px) {
+				// width: 		60rem;
+				// padding:	0 $absBaseSize;
+			// }
+
+			.fa {
+			    width: 		2.25rem;
+			    height: 	2.25rem;
+			    float: 		right;
+				font-size: 	1rem;
+			    line-height:2.25rem;
+			    text-align: center;
+			    transition: transform 0.4s;
+			}
+		}
+
+		h3 {
+			width:			100%;
+			// font-family:	$textType;
+			// font-size:		$relBaseSize * 1.6;
+			font-size:		$relBaseLine;
+			font-weight:	$bold;
+			min-height: 	$relBaseLine;
+			// line-height: 	$relLargeBaseLine;
+			line-height: 	$relBaseLine;
+			// text-transform: lowercase;
+			margin-bottom:	$relBaseSize * 0.4;
+			margin-top:		$relBaseSize * 0.4;
+			// line-height:	$relBaseSize * 1.5;
+			// text-align:		center;
+			color:			$orange-b;
+			letter-spacing: $relBaseSize * -0.047;
+			// text-transform: lowercase;
+		}
+
+		h3.section-header {
+			font-size:		$relBaseSize * 2;
+		}
+
+		h4 {
+			font-weight: 	$bold;
+			font-size: 		$relBaseSize;
+			color:			$orange-a;
+			margin-bottom: 	$relBaseSize * 0.75;
+
+			em {
+				font-style: initial;
+			}
+		}
+
+		h4.post-date {
+			font-size:		0.75em;
+		}
+
+	// Inline Text Elements
+
+		p,
+		form .description {
+			font-family: 	$textType;
+			font-size:		$relBaseSize * 1;
+			line-height:	$relBaseLine;
+			// padding:		0 $absBaseSize;
+			margin:			0 0 $relBaseSize;
+			// max-width:		24rem;
+			width:			100%;
+		}
+
+		// h3 + p {
+			// margin-top:		$relBaseSize;
+		// }
+
+		p.large,
+		blockquote,
+		.page-intro {
+			font-size:		$absBaseSize * 1.25;
+			margin:			$relBaseSize * 0.6 0 $relBaseSize;
+			// font-weight:	$light;
+			// font-size: 2em;
+		    // padding: 0 1rem;
+		    // font-weight: 	$light;
+		    // text-align: center;
+
+		    @media screen and (min-width: 64rem) {
+		    	// font-size:	2.5em;
+		    	width:		100%;
+		    	position:	relative;
+		    	// max-width:	40rem;
+			}
+		}
+
+		p.large {
+			font-weight:	$light;
+		}
+
+		.page-intro {
+			// margin:			0;
+			font-weight:	$light;
+		}
+
+		blockquote {
+			position:		relative;
+			font-family: 	$displayType;
+			padding:		0;
+			font-weight:	$semibold;
+			margin-bottom:	0;
+			font-size: 		$relBaseSize;
+			letter-spacing: -0.047em;
+			color:			$black;
+
+			strong {
+				font-weight:	$ultrabold;
+			    margin-top: 0.75em;
+			    display: inline-block;
+			    color:		$yellow-a;
+			}
+
+			.fa-quote-left,
+			.fa-quote-right {
+			    color: #f5c42b;
+			    width: 1.5em;
+			}
+
+			.fa-quote-left {
+			    margin-left: -1.5em;
+			    position: absolute;
+			    bottom: 0;
+			    left: 0;
+			    margin: 0;
+			}
+
+			.fa-quote-right {
+			    // text-align: right;
+			    position: absolute;
+			    top: 0;
+			    right: 0;
+			    margin: 0;
+			}
+		}
+
+		p.small,
+		ul.small {
+			font-size:		$absBaseSize * 0.875;
+		}
+
+		.fa {
+			line-height:	inherit;
+			font-size:		inherit;
+		}
+
+		*.centered {
+			text-align:		center;
+		}
+
+		a {
+			color:	inherit;
+			font-weight:	$bold;
+			text-decoration:none;
+			cursor:	pointer;
+		}
+
+		p a {
+			// text-decoration:	underline;
+			color:				$black;
+			font-weight:		inherit;
+		    text-shadow: -1px 0px white, 1px 0px white, 0px -1px white, 0px 1px white;
+		    box-shadow: inset 0 -1px 0 0 white, inset 0 -3px 0 0 #b9b9b9;
+		}
+
+		li {
+			font-size:		$relBaseSize;
+			color:			$black;
+			margin-bottom: 	$relLargeGutter;
+
+			.fa {
+				margin-left:	$relSmallGutter;
+			}
+		}
+
+		ul {
+			padding:		0 0 0 $relBaseSize;
+			// font-style:		italic;
+			line-height: 	$relBaseLine;
+			font-size:		inherit;
+			// font-weight:	$semibold;
+			// color:			$grey-dark;
+			margin-bottom:	$relLargeGutter;
+		}

@@ -1,0 +1,73 @@
+// Colours
+
+	$white:						#fff;
+	$transparent-white:			rgba(255,255,255,0.5);
+
+	$black:						#27283a;
+	$lightparent-black:			rgba(30,40,58,0.35);
+	$transparent-black:			rgba(30,40,58,0.5);
+	$darkparent-black:			rgba(30,40,58,0.85);
+
+	$grey:						#aba8a0;
+	$grey-very-light:			#eee;
+	$grey-light:				#e7e6e4;
+	$grey-dark:					#686D73;
+	// $grey-very-dark:
+
+	$orange-a:					#f45452;					
+	$orange-b:					#ff8f29;
+	$orange-c:					#ff8f29;
+
+	$orange-b-transp:			rgba(255, 143, 41, 0.85);
+	$orange-b-dark:				darken($orange-b, 15%);
+
+	$yellow-a:					#ffac00;
+	$yellow-b:					#f5c42b;
+	$yellow-c:					#ffe363;
+	$yellow-d:					#fff0ad;
+
+	$green-a:					#8ccb41;
+	$green-b:					#cceb33;
+	// $green-c:					#;
+
+	$blue-a:					#52c2c9;
+	$blue-b:					#82ebe3;
+	// $blue-c:					#;
+
+	$purple-a:					#5c78e5;
+	$purple-b:					#a8a6ff;
+	// $purple-c:					#;
+
+// Type
+
+	$displayType:			"ff-mark-web-pro", 'Helvetica-Neue', Helvetica, sans-serif;
+	$textType:		"proxima-nova", 'Helvetica-Neue', Helvetica, sans-serif;
+
+	$light:						100;
+	$regular:					400;
+	$semibold:					600;
+	$bold:						700;
+	$ultrabold:					900;
+
+// Grid
+
+	$relBaseSize:				1em;
+	$relBaseLine:				1.5em;
+	$relLargeBaseLine:			2.25em;
+	$relSmallGutter:			0.5em;
+	$relLargeGutter:			0.75em;
+
+	$absBaseSize:				1rem;
+	$absBaseLine:				1.5rem;
+	$absLargeBaseLine:			2.25rem;
+	$absSmallGutter:			0.5rem;
+	$absLargeGutter:			0.75rem;
+
+// Animation
+
+	$fast:						0.4s ease;
+	$fast-bounce:				0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	$slow-cubic:				0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+	$fast-cubic:				0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+	$very-fast-cubic:			0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+	$very-slow-linear:			1.2s linear;
