@@ -448,7 +448,7 @@ function _field_invoke_get_instances($entity_type, $bundle, $options) {
       }
     }
   }
-
+  $instances = array_filter($instances);
   return $instances;
 }
 
