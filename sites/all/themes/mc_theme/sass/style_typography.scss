@@ -24,11 +24,11 @@
 			// max-width: 		24rem;
 			color:			$orange-a;
 
-		    @media screen and (min-width: 48rem) {
+		    @media screen and (min-width: 48em) {
 		    	width:		90vw;
 			}
 
-			@media screen and (min-width: 48rem) {
+			@media screen and (min-width: 48em) {
 		    	width:		80vw;
 			}
 		}
@@ -57,7 +57,7 @@
 			// text-align:		center;
 			// color:			$white;
 
-			// @media screen and (min-width: 1024px) {
+			// @media screen and (min-width: 102px) {
 				// width: 		60rem;
 				// padding:	0 $absBaseSize;
 			// }
@@ -139,7 +139,7 @@
 		    // font-weight: 	$light;
 		    // text-align: center;
 
-		    @media screen and (min-width: 64rem) {
+		    @media screen and (min-width: 64em) {
 		    	// font-size:	2.5em;
 		    	width:		100%;
 		    	position:	relative;

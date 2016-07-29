@@ -100,7 +100,7 @@
 			transition:		transform $fast-bounce;
 							// background-color $fast-cubic;
 
-			@media screen and (min-width: 30rem) {
+			@media screen and (min-width: 30em) {
 				width:		auto;
 			}
 
@@ -122,7 +122,7 @@
 				// margin-bottom:	$relBaseLine;
 				margin-top:	$relBaseLine;
 
-				@media screen and (min-width: 30rem) {
+				@media screen and (min-width: 30em) {
 					margin-top:	inherit;
 				}
 			}
@@ -131,7 +131,7 @@
 				margin-bottom:	$relBaseLine;
 				// margin-bottom:	0;
 
-				@media screen and (min-width: 30rem) {
+				@media screen and (min-width: 30em) {
 					margin-bottom:	0.9em;
 				}
 			}
@@ -234,7 +234,7 @@
 					height:		$relBaseSize * 3.2;
 					width:		auto;
 
-					@media screen and (min-width: 42.5rem) {
+					@media screen and (min-width: 42.5em) {
 						margin:	0;
 					}
 
@@ -321,7 +321,7 @@
 		font-size:	$relBaseSize * 1.6;
 		padding:	0 $absLargeGutter;
 
-		@media screen and (min-width: 48rem) {
+		@media screen and (min-width: 48em) {
 			display:		flex;
 			flex-direction:	row;	
 			justify-content: space-between;
@@ -330,12 +330,12 @@
 			padding:		0 5vw;
 		}
 
-		@media screen and (min-width: 64rem) {
+		@media screen and (min-width: 64em) {
 		    padding-left:	10vw;
 		    padding-right:	10vw;
 		}
 
-		@media screen and (min-width: 82rem) {
+		@media screen and (min-width: 82em) {
 		    // padding-left:	12.5vw;
 		    // padding-right:	12.5vw;
 
@@ -359,11 +359,11 @@
 			margin-right:	$relBaseSize * 0.875;
 			width:			auto;
 
-			@media screen and (min-width: 48rem) {
+			@media screen and (min-width: 48em) {
 				font-size:		$relLargeGutter;
 			}
 
-			@media screen and (min-width: 1024px) {
+			@media screen and (min-width: 64em) {
 				font-size:		$relBaseSize * 0.875;
 			}
 		}
@@ -372,7 +372,7 @@
 			&:nth-of-type(1) .fa {
 				margin-right:	0;
 
-				// @media screen and (min-width: 48rem) {
+				// @media screen and (min-width: 48em) {
 					// margin-right:	$absSmallGutter;
 				// }
 			}
@@ -389,7 +389,7 @@
 				margin-bottom:		0;
 				margin-right:		0;
 
-				@media screen and (min-width: 48rem) {
+				@media screen and (min-width: 48em) {
 					margin-right:	0;
 				}
 			}
@@ -485,11 +485,11 @@
 		    // width: 		100%;
 		    // position: 	relative;
 
-		    // @media screen and (min-width: 48rem) {
+		    // @media screen and (min-width: 48em) {
 				// width:		auto;	
 			// }
 
-		    // @media screen and (min-width: 64rem) {
+		    // @media screen and (min-width: 64em) {
 		    // 	width:	37.5%;
 		    // 	margin-left:	10%;
 		    // }
@@ -522,7 +522,7 @@
 		    padding-top:	$relBaseSize * 0.4375;
 		    padding-right:	$absBaseSize;
 
-		    @media screen and (min-width: 48rem) {
+		    @media screen and (min-width: 48em) {
 				// margin-right:	10%;
 			    position: relative;
 			    margin: 0;
@@ -536,7 +536,7 @@
 			text-align:	right;
 			color:		$orange-a;
 			
-			@media screen and (min-width: 48rem) {
+			@media screen and (min-width: 48em) {
 				text-align:	center;
 				line-height: $relBaseSize * 1.625;
 				margin-bottom:	0;
@@ -551,12 +551,12 @@
 		    justify-content: space-between;
 		    padding: 	0 0 $absLargeGutter;
 
-		    @media screen and (min-width: 48rem) {
+		    @media screen and (min-width: 48em) {
 				width:		auto;	
 				padding-bottom:	0;
 			}
 
-		    @media screen and (min-width: 64rem) {
+		    @media screen and (min-width: 64em) {
 	    	    // background: #F45452;
 			    flex-wrap: wrap;
 			    align-items: center;
@@ -581,19 +581,19 @@
 		.contact div.flex--box {
 			justify-content: 	space-between;
 
-			@media screen and (min-width: 42.5rem) {
+			@media screen and (min-width: 42.5em) {
 				justify-content: flex-start;
 			}
 		}
 
 	.region-header {
-		@media screen and (min-width: 64rem) {
+		@media screen and (min-width: 64em) {
 			width:		50%;
 		}
 	}
 
 	.region-header .region-inner {
-		@media screen and (min-width: 64rem) {
+		@media screen and (min-width: 64em) {
 			display:	flex;
 			justify-content:	flex-end;
 		}
@@ -761,23 +761,23 @@
 		margin:	$relSmallGutter 0 $relBaseSize * 0.875;
 		margin:		0;
 
-		@media screen and (min-width: 42.5rem) {
+		@media screen and (min-width: 42.5em) {
 			width:		auto;
 			margin:		0;	
 			flex-grow:	1;
 		}
 
-		@media screen and (min-width: 48rem) {
+		@media screen and (min-width: 48em) {
 			padding-right:	5vw;
 		}
 
-		@media screen and (min-width: 64rem) {
+		@media screen and (min-width: 64em) {
 		//     // margin: 0;
 		//     // width: calc(((100% - 3rem) * 0.375));
 			padding-right:	10vw;
 		}
 
-		@media screen and (min-width: 82rem) {
+		@media screen and (min-width: 82em) {
 		    // padding-right:	12.5vw;
 		    padding-right:		1em;
 		    border-top-right-radius:	0.4375rem;
@@ -793,11 +793,11 @@
 	    padding: initial;
 	    border-radius: initial;
 
-	    @media screen and (min-width: 42.5rem) {
+	    @media screen and (min-width: 42.5em) {
 	    	margin:	0.5em 0 0;
 	    }
 
-	    @media screen and (min-width: 48rem) {
+	    @media screen and (min-width: 48em) {
 	    	margin:	$relBaseSize * 0.9375 0;
 	    }
 	}
@@ -835,7 +835,7 @@
 	    font-family: $displayType;
 	    margin-bottom:			0;
 
-	    @media screen and (min-width: 48rem) {
+	    @media screen and (min-width: 48em) {
 	    	margin-bottom: 		0;
 	    	display:			block;
 	    	height: 			2em;
@@ -849,7 +849,7 @@
     .block-search input[type="search"] {
     	box-shadow:		initial;
 
-    	@media screen and (min-width: 48rem) {
+    	@media screen and (min-width: 48em) {
     		margin-bottom: 0;
     		// font-size:		$relBaseSize * 0.75;
     		height: 		$relBaseLine;
@@ -859,12 +859,12 @@
 // Navigation Block Wrapper
 
 	.nav {
-		@media screen and (min-width: 42.5rem) {
+		@media screen and (min-width: 42.5em) {
 			display:		flex;
 			flex-wrap:		initial;
 		}
 
-		@media screen and (min-width: 82rem) {
+		@media screen and (min-width: 82em) {
 		    max-width: 65rem;
 		    margin: 0 auto;
 		}		
@@ -879,27 +879,27 @@
 		font-size:	$relBaseSize * 1.6;
 		z-index: 	99;
 
-		// @media screen and (min-width: 30rem) {
+		// @media screen and (min-width: 30em) {
 			// font-size:		$relBaseSize * 2;
 		// }
 
-		@media screen and (min-width: 30rem) {
+		@media screen and (min-width: 30em) {
 			display: flex;
 			flex-direction:	row;
 			justify-content: space-between;
 			padding-bottom:	$relSmallGutter;	
 		}
 
-		@media screen and (min-width: 42.5rem) {
+		@media screen and (min-width: 42.5em) {
 			width: 		auto;
 			flex-grow:	2;
 		}
 
-		@media screen and (min-width: 48rem) {
+		@media screen and (min-width: 48em) {
 			padding:	$relSmallGutter 0 $relSmallGutter calc(5vw - 0.375rem);
 		}
 
-		@media screen and (min-width: 64rem) {
+		@media screen and (min-width: 64em) {
 		//     display: flex;
 		//     justify-content: space-between;
 		//     align-items: center;
@@ -909,13 +909,13 @@
 		    // padding-right:	10vw;
 		}
 
-		@media screen and (min-width: 82rem) {
+		@media screen and (min-width: 82em) {
 		    padding-left:	calc(12.5vw - 0.375rem);
 		}
 	}
 
 	nav#block-system-main-menu {
-		@media screen and (min-width: 82rem) {
+		@media screen and (min-width: 82em) {
 			border-top-left-radius:	0.4375rem;
 			padding-left:	1em;
 		}
@@ -933,7 +933,7 @@
 		font-family: 	$displayType;
 		width: 			100%;
 
-		@media screen and (min-width: 30rem) {
+		@media screen and (min-width: 30em) {
 		    opacity: 1;
 		    max-height: initial;
 		    position: relative;
@@ -942,7 +942,7 @@
 		    display: flex;
 		}
 
-		@media screen and (min-width: 42.5rem) {
+		@media screen and (min-width: 42.5em) {
 			justify-content: flex-start;
 			width:			auto;
 			margin:			0;	
@@ -963,7 +963,7 @@
 		color:		$white;
 		// border-radius:	$relSmallGutter / 2 $relSmallGutter / 2 0 0;
 
-		// @media screen and (min-width: 64rem) {
+		// @media screen and (min-width: 64em) {
 			// padding:	0 1em 0 0;
 		    // margin: 	0;
 		    // width:		auto;
@@ -985,19 +985,19 @@
 	}
 
 	nav > ul.menu > li:nth-of-type(5) {
-		@media screen and (min-width: 52rem) {
+		@media screen and (min-width: 52em) {
 			padding-left:		0;
 			padding-right:		0;
 		}
 
 		> a {
-			@media screen and (min-width: 52rem) {
+			@media screen and (min-width: 52em) {
 				display:		none;	
 			}
 		}
 
 		ul {
-			@media screen and (min-width: 52rem) {
+			@media screen and (min-width: 52em) {
 			    opacity: 1;
 			    max-height: initial;
 			    position: relative;
@@ -1008,7 +1008,7 @@
 		}
 
 		ul li {
-			@media screen and (min-width: 52rem) {
+			@media screen and (min-width: 52em) {
 			    opacity: 1;
 			    transform: initial;
 			    width: auto;
@@ -1085,7 +1085,7 @@
 	    width:		calc(100% + 1rem);
 	    // border-radius:	0 $relSmallGutter / 2 $relSmallGutter / 2 0;
 
-	    @media screen and (min-width: 23.4375rem) {
+	    @media screen and (min-width: 23.4375em) {
 	    	width:	auto;
 	    }
 	}
@@ -1107,7 +1107,7 @@
 		&:nth-of-type(3),
 		&:nth-of-type(4) {
 			ul {
-				@media screen and (min-width: 33.75rem) {
+				@media screen and (min-width: 33.75em) {
 					left: 0;
 					right:	initial;
 				}
@@ -1140,13 +1140,13 @@
 	// 	width:		calc(100% / 3);
 	// 	// box-shadow:	inset -0.5rem 0 0 0 $yellow-a;
 
-	// 	// @media screen and (min-width: 64rem) {
+	// 	// @media screen and (min-width: 64em) {
 	// 		// width:	calc(100% / 3);
 	// 	// }
 	// }
 
 	// .slider.widescreenB--wrapper:before {
-	// 	// @media screen and (min-width: 64rem) {
+	// 	// @media screen and (min-width: 64em) {
 	// 	// 	padding-top:	45.45%;
 	// 	// }
 	// }
@@ -1185,7 +1185,7 @@
 	//     	// font-size:			$relBaseSize * 1.8;
 	//     }
 
-	//     // @media screen and (min-width: 64rem) {
+	//     // @media screen and (min-width: 64em) {
 	//     // 	width:		50%;
 	//     // 	margin:		0 25%;
 	//     // }
@@ -1225,7 +1225,7 @@
 	// 	transition:		margin-left $fast-cubic;
 	// 	// overflow-x:	hidden;
 
-	// 	// @media screen and (min-width: 64rem) {
+	// 	// @media screen and (min-width: 64em) {
 	// 		// width:	300%;
 	// 	// }
 
@@ -1302,7 +1302,7 @@
 			padding-left:	0;
 			padding-right:	0;
 
-		@media screen and (min-width: 1024px) {
+		@media screen and (min-width: 64em) {
 			flex-direction:	column;
 			// padding-top:	7.5%;
 			// margin-left: 	10%;
@@ -1316,7 +1316,7 @@
 	section.contact-us {
 		padding-bottom:		$relBaseLine * 3;
 
-		@media screen and (min-width: 48rem) {
+		@media screen and (min-width: 48em) {
 			padding-bottom:	0;
 		}
 	}
@@ -1336,7 +1336,7 @@
 	.masterclass-video {
 		margin-bottom:	$relBaseSize * 3;
 
-		// @media screen and (min-width: 64rem) {
+		// @media screen and (min-width: 64em) {
 			// width:		75%;
 			// margin:		0 12.5% 4em;
 		// }
@@ -1350,16 +1350,16 @@
 		padding:			$relSmallGutter $absBaseSize $relBaseLine;
 		margin-top:			$relBaseLine * 2;
 
-		@media screen and (min-width: 23.4375rem) {
+		@media screen and (min-width: 23.4375em) {
 			padding:		$relSmallGutter $absBaseSize * 2 $relBaseLine;
 		}
 
-		@media screen and (min-width: 42.5rem) {
+		@media screen and (min-width: 42.5em) {
 		    display: flex;
 		    flex-direction: row-reverse;
 		}
 
-		@media screen and (min-width: 48rem) {
+		@media screen and (min-width: 48em) {
 			width:			100%;
 			font-size:		$relBaseSize * 2;
 			// padding:		$relSmallGutter 5vw $relBaseLine;
@@ -1369,7 +1369,7 @@
 			padding-right:	0;
 		}
 
-		@media screen and (min-width: 64rem) {
+		@media screen and (min-width: 64em) {
 		// 	width:			100vw;
 			padding:		$relSmallGutter 0 $relBaseLine;
 		}
@@ -1392,36 +1392,36 @@
 	}
 
 	footer > div {
-		@media screen and (min-width: 42.5rem) {
+		@media screen and (min-width: 42.5em) {
 			width:			calc(50% - 0.375rem);
 		}
 
-		@media screen and (min-width: 48rem) {
+		@media screen and (min-width: 48em) {
 			// display:		flex;
 			// justify-content: 	space-between;
 		}
 
-		@media screen and (min-width: 64rem) {
+		@media screen and (min-width: 64em) {
 			padding-left:		10vw;
 			padding-right:		$relBaseSize; 
 			width: 				65%;
 		}
 
-		@media screen and (min-width: 82rem) {
+		@media screen and (min-width: 82em) {
 			padding-left:		12.5vw;
 		}
 
 		&:first-of-type {
 			margin-right:	0.75rem;
 
-			@media screen and (min-width: 48rem) {
+			@media screen and (min-width: 48em) {
 				margin-right:	0;
 				padding-left:	1rem;
 				padding-right:	5vw;
 				width:			35%;
 			}
 
-			@media screen and (min-width: 64rem) {
+			@media screen and (min-width: 64em) {
 				padding-right:	10vw;
 			}
 		}
@@ -1429,26 +1429,26 @@
 		&:last-of-type {
 			padding-top:	$relBaseLine;
 
-			@media screen and (min-width: 48rem) {
+			@media screen and (min-width: 48em) {
 				padding-right:	1rem;
 				padding-left:	5vw;
 				width:			65%;
 			}
 
-			@media screen and (min-width: 60rem) {
+			@media screen and (min-width: 60em) {
 				display:		flex;
 				justify-content: 	space-between;
 				flex-wrap:		wrap;
 			}
 
-			@media screen and (min-width: 64rem) {
+			@media screen and (min-width: 64em) {
 				padding-left:	10vw;
 			}
 		}
 	}
 
 	footer .col {
-		@media screen and (min-width: 60rem) {
+		@media screen and (min-width: 60em) {
 			width:			calc((100% - 1.5rem) / 3);
 		}
 	}
@@ -1464,7 +1464,7 @@
 		padding:	0;
 		margin:		0;
 
-		// @media screen and (min-width: 64rem) {
+		// @media screen and (min-width: 64em) {
 		// 	height:	12em;
 		// }
 	}
@@ -1479,7 +1479,7 @@
 		// font-size:	$relBaseSize * 1.6;
 		line-height: $relBaseSize * 1.5;
 
-		// @media screen and (min-width: 48rem) {
+		// @media screen and (min-width: 48em) {
 			// width:	25%;	
 		// }
 	}
@@ -1526,12 +1526,12 @@
 		// background-image: 	initial;
 
 		&:before {
-			@media screen and (min-width: 40rem) {
+			@media screen and (min-width: 40em) {
 				padding-top:	42.55%;
 			}
 		}
 
-		@media screen and (min-width: 64rem) {
+		@media screen and (min-width: 64em) {
 			width:			100%;
 		}
 	}
@@ -1583,7 +1583,7 @@
 		&:first-of-type {
 			margin-top:	$relBaseSize;
 
-			@media screen and (min-width: 33.75rem) {
+			@media screen and (min-width: 33.75em) {
 				margin-top:	0;
 			}
 		}
@@ -1593,60 +1593,60 @@
 		}
 
 		&+ .card {
-			@media screen and (min-width: 48rem) {
+			@media screen and (min-width: 48em) {
 				margin-top:	0;
 			}
 		}
 
-		@media screen and (min-width: 30rem) {
+		@media screen and (min-width: 30em) {
 			border-radius:	$relSmallGutter;
 		}
 
-		@media screen and (min-width: 33.75rem) {
+		@media screen and (min-width: 33.75em) {
 			width:			calc(50% - 0.5em);
 			font-size:		$relBaseSize * 0.75;
 		}
 
 		&:nth-of-type(3n-4) {
-			@media screen and (min-width: 42.5rem) {
+			@media screen and (min-width: 42.5em) {
 				margin-left:	0.75em;
 				margin-right:	0.75em;
 			}
 
-			@media screen and (min-width: 48rem) {
+			@media screen and (min-width: 48em) {
 				margin-left:	0;
 				margin-right:	0;
 			}
 
-			@media screen and (min-width: 80rem) {
+			@media screen and (min-width: 80em) {
 				margin-left:	0.75em;
 				margin-right:	0.75em;
 			}
 		}
 
-		@media screen and (min-width: 37.5rem) {
+		@media screen and (min-width: 37.5em) {
 			font-size:		$relBaseSize;
 		}
 
-		@media screen and (min-width: 42.5rem) {
+		@media screen and (min-width: 42.5em) {
 			font-size:		$relBaseSize * 0.75;
 			width:			calc((100% - 1.5em) / 3);
 		}
 
-		@media screen and (min-width: 48rem) {
+		@media screen and (min-width: 48em) {
 			font-size:		$relBaseSize * 0.75;
 			width:			calc((100% - 1em) / 2);
 		}
 
-		@media screen and (min-width: 60rem) {
+		@media screen and (min-width: 60em) {
 			font-size:		$relBaseSize;
 		}
 
-		@media screen and (min-width: 64rem) {
+		@media screen and (min-width: 64em) {
 			font-size: 		$relBaseSize * 0.875;
 		}
 
-		@media screen and (min-width: 80rem) {
+		@media screen and (min-width: 80em) {
 			width:			calc((100% - 1.5em) / 3);
 		}
 	}
@@ -1729,7 +1729,7 @@
 		border-radius:	0 0 $relSmallGutter / 2 $relSmallGutter / 2;
 		background-color: $yellow-a;
 
-		@media screen and (min-width: 30rem) {
+		@media screen and (min-width: 30em) {
 			border-radius:	0 0 $relSmallGutter $relSmallGutter;
 		}
 	}
@@ -1748,7 +1748,7 @@
 		white-space: 	nowrap;
 		display:		block;
 
-		@media screen and (min-width: 33.75rem) {
+		@media screen and (min-width: 33.75em) {
 			font-size:	$relBaseSize;
 		}
 	}
@@ -1780,7 +1780,7 @@
 						transform $fast-cubic ;
 		border-radius:	$relSmallGutter / 2 $relSmallGutter / 2 0 0;
 
-		@media screen and (min-width: 30rem) {
+		@media screen and (min-width: 30em) {
 			border-radius:	$relSmallGutter $relSmallGutter 0 0;
 		}
 	}
@@ -1882,7 +1882,7 @@
 						top $fast-cubic,
 						opacity $fast-cubic;
 
-		@media screen and (min-width: 80rem) {
+		@media screen and (min-width: 80em) {
 			font-size:	0.875em;
 		}
 	}
@@ -1989,11 +1989,11 @@
 	.region.sidebar {
 		font-size:		$relBaseSize * 1.6;
 
-		@media screen and (min-width: 30rem) {
+		@media screen and (min-width: 30em) {
 			font-size:		$relBaseSize * 2;
 		}
 
-		@media screen and (min-width: 33.75rem) {
+		@media screen and (min-width: 33.75em) {
 			font-size:		$relBaseSize * 1.6;
 		}
 	}
@@ -2003,21 +2003,21 @@
 		font-size:		$relBaseSize * 1.6;
 		// padding:		0 $absBaseSize;
 
-		@media screen and (min-width: 23.4375rem) {
+		@media screen and (min-width: 23.4375em) {
 			padding-left:	$absBaseSize * 2;
 			padding-right:	$absBaseSize * 2;
 		}
 
-		@media screen and (min-width: 30rem) {
+		@media screen and (min-width: 30em) {
 			// font-size:		$relBaseSize * 2;
 		}
 
-		@media screen and (min-width: 768px) {
+		@media screen and (min-width: 76px) {
 			padding-left:	$absBaseSize * 0;
 			padding-right:	$absBaseSize * 0;
 		}
 
-		@media screen and (min-width: 1024px) {
+		@media screen and (min-width: 64em) {
 			padding-left:	0%;
 			padding-right:	0%;
 		}
@@ -2031,14 +2031,14 @@
 			width: 		100%;
 		}
 
-		@media screen and (min-width: 23.4375rem) {
+		@media screen and (min-width: 23.4375em) {
 			padding-left:	0;
 			padding-right:	0;
 		}
 	}
 	
 	.region.sidebar > *:first-of-type {
-		@media screen and (min-width: 48rem) {
+		@media screen and (min-width: 48em) {
 			margin-top:	$relBaseSize * 3.5;
 		}
 	}
@@ -2046,11 +2046,11 @@
 	section.splash {
 		// padding-top:		7.5%;
 
-		@media screen and (min-width: 64rem) {
+		@media screen and (min-width: 64em) {
 			padding:		0 10%;
 		}
 
-		@media screen and (min-width: 82rem) {
+		@media screen and (min-width: 82em) {
 			// padding:		0 12.5vw;
 			padding:		0;
 			margin:			0 auto;
@@ -2069,7 +2069,7 @@
 	section.destinations,
 	section,
 	section.team-grid {
-		@media screen and (min-width: 1024px) {
+		@media screen and (min-width: 64em) {
 			display:		flex;
 			flex-direction:	row;
 			justify-content: center;
@@ -2079,7 +2079,7 @@
 	}
 
 	section.sports {
-		// @media screen and (min-width: 64rem) {
+		// @media screen and (min-width: 64em) {
 		// 	// justify-content: space-around;
 		// }
 	}
@@ -2335,22 +2335,22 @@ p + .text-button {
 
 	section.main,
 	main#content-column {
-		@media screen and (min-width: 48rem) {
+		@media screen and (min-width: 48em) {
 			width:		65%;
 			padding:	0 $absBaseSize 0 $absBaseSize * 2;
 		}
 
-		@media screen and (min-width: 48rem) {
+		@media screen and (min-width: 48em) {
 			// width:		65%;
 			padding:	0 $absBaseSize 0 5vw;
 		}
 
-		@media screen and (min-width: 64rem) {
+		@media screen and (min-width: 64em) {
 			padding-left:	10vw;
 		// 	padding-left:	0;
 		}
 
-		@media screen and (min-width: 82rem) {
+		@media screen and (min-width: 82em) {
 			// padding-left:	12.5vw;
 			padding-left:	0;
 			width: 		75%;
@@ -2358,7 +2358,7 @@ p + .text-button {
 	}
 
 	div#content {
-		@media screen and (min-width: 80rem) {
+		@media screen and (min-width: 80em) {
 		    // display: flex;
 		    // flex-wrap: wrap;
 		    // align-items: flex-start;
@@ -2384,45 +2384,45 @@ p + .text-button {
 		// padding-bottom:	$relBaseLine;
 		padding:		$relBaseLine $absBaseSize 0 $absBaseSize;
 
-		@media screen and (min-width: 23.4375rem) {
+		@media screen and (min-width: 23.4375em) {
 			padding-left:	$absBaseSize * 2;
 			padding-right:	$absBaseSize * 2;
 		}
 
-		@media screen and (min-width: 30rem) {
+		@media screen and (min-width: 30em) {
 			// font-size:		$relBaseSize * 2;
 		}
 
-		@media screen and (min-width: 48rem) {
+		@media screen and (min-width: 48em) {
 			width:		35%;
 			padding:	$relBaseSize * 1.375 $absBaseSize * 2 0 0;
 			padding:	$relBaseSize * 1.375 $absBaseSize * 2 0 $absBaseSize;
 			justify-content: flex-start;	
 		}
 
-		@media screen and (min-width: 48rem) {
+		@media screen and (min-width: 48em) {
 			padding:	$relBaseSize * 1.375 5vw 0 $absBaseSize;
 		}
 
-		@media screen and (min-width: 64rem) {
+		@media screen and (min-width: 64em) {
 		// 	margin-right:	10%;
 			padding-right:	10vw;
 		}
 
-		@media screen and (min-width: 82rem) {
+		@media screen and (min-width: 82em) {
 			// padding-right:	12.5vw;
 			padding-right:	0;
 			width: 			25%;
 		}
 
 		.block-content {
-			@media screen and (min-width: 64rem) {
+			@media screen and (min-width: 64em) {
 				// padding-top:	$relBaseSize * 3.5;
 			}
 		}
 
 		.block-webform .block-content {
-			@media screen and (min-width: 80rem) {
+			@media screen and (min-width: 80em) {
 				padding-top:	0;
 			}
 		}
@@ -2433,7 +2433,7 @@ p + .text-button {
 	}
 
 div.main {
-	@media screen and (min-width: 48rem) {
+	@media screen and (min-width: 48em) {
 		display: flex;
 	    flex-direction: row;
 	    flex-wrap: wrap;
@@ -2441,7 +2441,7 @@ div.main {
 	    align-items: flex-start;	
 	}
 
-	// @media screen and (min-width: 64rem) {
+	// @media screen and (min-width: 64em) {
 	// 	// padding:	0 10%;
 	// }
 }
@@ -2449,11 +2449,11 @@ div.main {
 // Card Wrapper
 
 	.card-wrapper {
-		@media screen and (min-width: 33.75rem) {
+		@media screen and (min-width: 33.75em) {
 			justify-content: flex-start;
 		}
 
-		@media screen and (min-width: 48rem) {
+		@media screen and (min-width: 48em) {
 			// justify-content: space-between;
 			margin-top:		$relBaseSize;
 		}
@@ -2462,7 +2462,7 @@ div.main {
 	// Team Wrapper
 
 		.card-wrapper.team {
-			@media screen and (min-width: 48rem) {
+			@media screen and (min-width: 48em) {
 				font-size:	$relBaseSize * 0.875;
 			}
 		}
@@ -2523,7 +2523,7 @@ div.main {
 		width:		4.5em;
 		height:		4.5em;
 
-		@media screen and (min-width: 48rem) {
+		@media screen and (min-width: 48em) {
 			width:	3em;
 			height:	3em;
 		}
@@ -2531,7 +2531,7 @@ div.main {
 		img {
 			width:	3em;
 
-			@media screen and (min-width: 48rem) {
+			@media screen and (min-width: 48em) {
 				width:	2em;
 			}
 		}
@@ -2544,7 +2544,7 @@ div.main {
 		padding-left:	0;
 		// margin-top:		0;
 
-		@media screen and (min-width: 37.5rem) {
+		@media screen and (min-width: 37.5em) {
 			justify-content: 	space-between;
 	    }
 	}
@@ -2576,11 +2576,11 @@ div.main {
 		    overflow:		visible;
 		    // cursor:		pointer;
 
-		    @media screen and (min-width: 37.5rem) {
+		    @media screen and (min-width: 37.5em) {
 		    	width:		calc(50% - 0.5em);
 		    }
 
-		    @media screen and (min-width: 48rem) {
+		    @media screen and (min-width: 48em) {
 		    	width:		100%;
 		    	font-size:	$relBaseSize * 0.8125
 		    }
@@ -2969,7 +2969,7 @@ div.main {
 	}
 
 	form .webform-component {
-		@media screen and (min-width: 48rem) {
+		@media screen and (min-width: 48em) {
 			// margin-left:	$relLargeBaseLine;
 		}
 	}
@@ -3037,7 +3037,7 @@ div.main {
 		align-items:	flex-start;
 		flex-wrap:	wrap;
 
-		@media screen and (min-width: 48rem) {
+		@media screen and (min-width: 48em) {
 			flex-wrap:	wrap;
 		}
 
@@ -3048,7 +3048,7 @@ div.main {
 		input:nth-child(n+2) {
 			margin-left:	$relLargeGutter;
 
-			@media screen and (min-width: 48rem) {
+			@media screen and (min-width: 48em) {
 				// margin-left:	inherit;
 			}
 		}
@@ -3111,20 +3111,20 @@ div.main {
 		width:			100%;
 		margin-top:		1em;
 
-		@media screen and (min-width: 40rem) {
+		@media screen and (min-width: 40em) {
 			display:	flex;
 			justify-content: space-between;
 			flex-wrap:	wrap;
 		}
 
-		@media screen and (min-width: 48rem) {
+		@media screen and (min-width: 48em) {
 			// width:			calc((100% - 1.5em) / 3);
 		}
 
 		// .card {
 			// width:		100%;
 
-			// @media screen and (min-width: 40rem) {
+			// @media screen and (min-width: 40em) {
 				// width:	calc(50% - 0.25rem);
 				// margin-bottom:		0;
 			// }
@@ -3145,7 +3145,7 @@ div.main {
 
 		// > p,
 		// > div {
-			// @media screen and (min-width: 40rem) {
+			// @media screen and (min-width: 40em) {
 				// width:	calc(50% - 0.25rem)
 			// }
 		// }
@@ -3188,7 +3188,7 @@ div.main {
 		overflow:		hidden;
 		// cursor:			pointer;
 		
-		@media screen and (min-width: 48rem) {
+		@media screen and (min-width: 48em) {
 			margin-top:		1.25em;
 		}
 
@@ -3280,7 +3280,7 @@ div.main {
 // Info Nugget
 
 	.info-nugget {
-		@media screen and (64rem) {
+		@media screen and (64em) {
 			margin-top:	3.5em;
 		}
 	}
@@ -3290,7 +3290,7 @@ div.main {
 	}
 
 	.region.sidebar .info-nugget .block-content {
-		@media screen and (min-width: 80rem) {
+		@media screen and (min-width: 80em) {
 			padding-top:	0;
 		}
 	}
@@ -3298,7 +3298,7 @@ div.main {
 // Sidebar Block ???
 
 	.region.sidebar #block-block-8 .block-content {
-		@media screen and (min-width: 80rem) {
+		@media screen and (min-width: 80em) {
 			padding-top:	0;
 		}
 	}
@@ -3306,7 +3306,7 @@ div.main {
 // About Sub-menu 
 
 	.menu-item-374 ul {
-		@media screen and (min-width: 52rem) {
+		@media screen and (min-width: 52em) {
 			background-color:	transparent;
 		}
 	}
@@ -3323,7 +3323,7 @@ div.main {
 	  margin-top:	0.75em;
 
 	  &.col3-4 {
-	  	@media screen and (min-width: 57.375rem) {
+	  	@media screen and (min-width: 57.375em) {
 		  	width:		calc((100% - 1.5rem) / 4 * 3);
 		  	float:		right;
 		}
@@ -3450,7 +3450,7 @@ div.main {
 	}
 
 	.block-views.testimonials-view {
-		@media screen and (min-width: 64rem) {
+		@media screen and (min-width: 64em) {
 		    // background-image: url(/sites/default/files/masterclass-barbados-hockey-3.jpg), linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0.25) 100%);
 		    margin-left: -10vw;
 		    padding-left: 10vw;
@@ -3467,7 +3467,7 @@ div.main {
 // Article Sub-Columns
 
 	article .col1-4 {
-		@media screen and (min-width: 57.375rem) {
+		@media screen and (min-width: 57.375em) {
 			width:		calc((100% - 1.5rem) / 4);
 			float:		left;
 
@@ -3506,14 +3506,14 @@ div.main {
 	    position: absolute;
 	    height: auto;
 
-	    @media screen and (min-width: 48rem) {
+	    @media screen and (min-width: 48em) {
 		   //  transform: initial;
 		   //  left: 2rem;
 		   //  bottom: 0;
 		   width:	9em;
 	    }
 
-	    // @media screen and (min-width: 40rem) {
+	    // @media screen and (min-width: 40em) {
 		   //  left: 5vw;
 	    // }
 	}
@@ -3525,13 +3525,13 @@ div.main {
 .blog-cover.widescreen--wrapper {
 	overflow:		hidden;
 
-	@media screen and (min-width: 64rem) {
+	@media screen and (min-width: 64em) {
 		float:		left;
 		margin-top:	1.25em;
 	}
 
 	&+ div {
-		@media screen and (min-width: 64rem) {
+		@media screen and (min-width: 64em) {
 			// float:		left;
 			// width:		calc((100% - 1.5rem) / 3 * 2);
 			// margin-left:$relLargeGutter;
@@ -3792,7 +3792,7 @@ div.main {
 	}
 
 	.columns {
-		@media screen and (min-width: 82rem) {
+		@media screen and (min-width: 82em) {
 			max-width:		65rem;
 			margin:			0 auto;
 		}
@@ -3813,22 +3813,22 @@ ul.contents {
 }
 
 .block.ctas .block-content {
-	@media screen and (min-width: 30rem) {
+	@media screen and (min-width: 30em) {
 		// display:		flex;
 		// justify-content: space-between;
 		// flex-wrap: 		wrap;
 	}
 
 	.text-button:nth-of-type(n+2) {
-		// @media screen and (min-width: 30rem) {
+		// @media screen and (min-width: 30em) {
 			// margin-left:	$relLargeGutter;
 		// }
 
-		// @media screen and (min-width: 48rem) {
+		// @media screen and (min-width: 48em) {
 			// margin-left:	0;
 		// }
 
-		// @media screen and (min-width: 82rem) {
+		// @media screen and (min-width: 82em) {
 			// margin-left:	$relLargeGutter;
 		// }
 	}
@@ -3837,13 +3837,13 @@ ul.contents {
 .region.sidebar {
 	#block-views-sports-block-1,
 	.block.ctas {
-		@media screen and (min-width: 42.5rem) {
+		@media screen and (min-width: 42.5em) {
 			// width:		calc(50% - 0.25rem);
 			// float:		left;
 			// margin-right:	0.5rem;
 		}
 
-		@media screen and (min-width: 48rem) {
+		@media screen and (min-width: 48em) {
 			width:		inherit;
 			float:		initial;
 			margin-right:	0;
@@ -3851,13 +3851,13 @@ ul.contents {
 	}
 
 	.block.twitter-timeline {
-		@media screen and (min-width: 42.5rem) {
+		@media screen and (min-width: 42.5em) {
 			width:		calc(50% - 0.25rem);
 			float:		right;
 			margin-top:	0;
 		}
 
-		@media screen and (min-width: 48rem) {
+		@media screen and (min-width: 48em) {
 			width:		inherit;
 			float:		initial;
 			margin-top:	$relBaseLine;
@@ -3866,12 +3866,12 @@ ul.contents {
 }
 
 .content-column form {
-	@media screen and (min-width: 42.5rem) {
+	@media screen and (min-width: 42.5em) {
 		width:		50%;
 		margin:		0 25%;
 	}
 
-	@media screen and (min-width: 48rem) {
+	@media screen and (min-width: 48em) {
 		width:		100%;
 		margin:		0;
 	}
@@ -3879,16 +3879,16 @@ ul.contents {
 
 .sidebar .text-button,
 .sidebar input[type="submit"] {
-	@media screen and (min-width: 48rem) {
+	@media screen and (min-width: 48em) {
 		width:			100%;
 		margin-top:		1em;
 	}
 
-	// @media screen and (min-width: 64rem) {
+	// @media screen and (min-width: 64em) {
 		// width:			auto;
 	// }
 
-	// @media screen and (min-width: 64rem) {
+	// @media screen and (min-width: 64em) {
 		// width:			auto;
 	// }
 }
@@ -3927,7 +3927,7 @@ ul.contents {
 }
 
 .affiliate-group > div:last-child {
-	@media screen and (min-width: 42.5rem) {
+	@media screen and (min-width: 42.5em) {
 		width:		calc((100% - 1.5rem) / 3 * 2);
 	}
 }
