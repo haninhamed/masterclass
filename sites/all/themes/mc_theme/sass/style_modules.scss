@@ -3825,11 +3825,13 @@ div.main {
 ul.contents {
 	list-style:		none;
 	padding:		0;
+}
 
-	li {
-		letter-spacing: -0.047em;
-		font-family: 	$displayType;
-	}
+ul.contents li,
+li {
+	letter-spacing: -0.047em;
+	font-family: 	$displayType;
+	font-weight:	$bold;
 }
 
 .block.ctas .block-content {

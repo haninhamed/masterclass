@@ -2524,9 +2524,12 @@ h4.post-date {
 ul.contents {
   list-style: none;
   padding: 0; }
-  ul.contents li {
-    letter-spacing: -0.047em;
-    font-family: "ff-mark-web-pro", "Helvetica-Neue", Helvetica, sans-serif; }
+
+ul.contents li,
+li {
+  letter-spacing: -0.047em;
+  font-family: "ff-mark-web-pro", "Helvetica-Neue", Helvetica, sans-serif;
+  font-weight: 700; }
 
 @media screen and (min-width: 48em) {
   .region.sidebar #block-views-sports-block-1,
