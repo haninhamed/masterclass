@@ -1265,14 +1265,13 @@ footer input[type="email"] {
     .card {
       width: calc(50% - 0.5em);
       font-size: 0.75em; } }
-  @media screen and (min-width: 42.5em) {
+  @media screen and (min-width: 37.5em) {
+    .card:nth-of-type(2n-2) {
+      margin-left: 1em; } }
+  @media screen and (min-width: 42.5em) and (max-width: 47.9375em) {
     .card:nth-of-type(3n-4) {
       margin-left: 0.75em;
       margin-right: 0.75em; } }
-  @media screen and (min-width: 48em) {
-    .card:nth-of-type(3n-4) {
-      margin-left: 0;
-      margin-right: 0; } }
   @media screen and (min-width: 80em) {
     .card:nth-of-type(3n-4) {
       margin-left: 0.75em;
@@ -1573,7 +1572,7 @@ section,
     .region.sidebar section {
       padding-left: 2rem;
       padding-right: 2rem; } }
-  @media screen and (min-width: 76px) {
+  @media screen and (min-width: 64em) {
     section,
     .region.sidebar section {
       padding-left: 0rem;
@@ -2203,7 +2202,10 @@ form input[type="submit"]:last-child {
   text-align: center;
   background-color: #ff8f29;
   text-shadow: initial;
-  box-shadow: initial; }
+  box-shadow: initial;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden; }
   .card.multipage h3:after {
     display: none; }
 
@@ -2567,6 +2569,9 @@ ul.contents {
 @media screen and (min-width: 42.5em) {
   .affiliate-group > div:last-child {
     width: calc((100% - 1.5rem) / 3 * 2); } }
+@media screen and (min-width: 48em) {
+  .affiliate-group > div:last-child {
+    width: 100%; } }
 
 .block.why-us {
   margin-top: 1em; }
@@ -2704,7 +2709,7 @@ input[type="radio"] {
     background-size: 125%;
     border: 2px solid #ffac00;
     border-radius: 50%;
-    width: calc(20% - 0.5em);
+    width: calc((100% / 6) - 0.5em);
     transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
     box-shadow: 0 1em 2em 0em transparent;
     background-color: transparent; }
