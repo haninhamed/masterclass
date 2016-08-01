@@ -56,7 +56,7 @@ function _webform2maximizer_test() {
   
     try {
 	  echo("<h1>RUNNING TEST</h1>");
-	  $client = new SoapClient("http://62.232.92.99/SupportersWebImport/SupportersWebImport.asmx?wsdl",array('cache_wsdl' => WSDL_CACHE_NONE,'trace' => TRUE, 'Username' => 'WebImport', 'Password' => 'Pa55w0rd'));
+	  $client = new SoapClient("http://62.232.92.99/SupportersWebImport/SupportersWebImport.asmx?wsdl",array('cache_wsdl' => WSDL_CACHE_NONE,'trace' => TRUE, 'Username' => 'TuiImport', 'Password' => 'Pa55w0rd'));
       dsm($client); 
     }
     catch (Exception $e) {
@@ -370,7 +370,7 @@ function webform2maximizer_webform_submission_insert($node, $submission) {
       $client = new SoapClient($maximizerurl, array('cache_wsdl' => WSDL_CACHE_NONE, 'trace' => TRUE));
 	  
 	  $auth = array(
-		'Username' => 'WebImport',
+		'Username' => 'TuiImport',
 		'Password' => 'Pa55w0rd',
 	  );
 	  $header = new SoapHeader('http://localhost/', 'AuthHeader', $auth, FALSE);
