@@ -477,6 +477,12 @@
 						background-color: 	saturate($purple-a, 15%);
 					}
 				}
+
+				&.webform-previous {
+					&:hover {
+						background-color:	saturate(darken($yellow-a, 5%), 10%);
+					}
+				}
 			}
 	
 		// Navigation Links

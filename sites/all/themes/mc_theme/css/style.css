@@ -497,11 +497,12 @@ input[type="submit"] {
 .view-display-id-block_2 {
   margin-top: 0; }
 
-.view-sports .view-content {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between; }
+@media screen and (min-width: 33.75em) {
+  .view-sports .view-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between; } }
 
 .view-sports .sport-button {
   margin: 0 0 1.5em;
@@ -793,6 +794,14 @@ select {
   margin-bottom: 1em;
   color: #27283a;
   box-shadow: inset 0 0 0 1px #aba8a0; }
+
+select[multiple="multiple"] {
+  height: auto;
+  min-height: 2.25em;
+  padding: 0.5rem; }
+  select[multiple="multiple"] option {
+    font-size: 1em;
+    line-height: 1.5em; }
 
 form .button {
   position: relative;
@@ -1268,6 +1277,9 @@ footer input[type="email"] {
   @media screen and (min-width: 37.5em) {
     .card:nth-of-type(2n-2) {
       margin-left: 1em; } }
+  @media screen and (min-width: 48em) {
+    .card:nth-of-type(2n-2) {
+      margin-left: inherit; } }
   @media screen and (min-width: 42.5em) and (max-width: 47.9375em) {
     .card:nth-of-type(3n-4) {
       margin-left: 0.75em;
@@ -1709,7 +1721,7 @@ section.sidebar,
 
 @media screen and (min-width: 33.75em) {
   .card-wrapper {
-    justify-content: flex-start; } }
+    justify-content: flex-start !important; } }
 @media screen and (min-width: 48em) {
   .card-wrapper {
     margin-top: 1em; } }
@@ -2091,21 +2103,27 @@ form fieldset fieldset a.fieldset-title {
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap; }
+  @media screen and (min-width: 30em) {
+    .form-actions {
+      justify-content: space-between; } }
   @media screen and (min-width: 48em) {
     .form-actions {
       flex-wrap: wrap; } }
   .form-actions:last-child {
     margin-bottom: 0; }
-  .form-actions input:nth-child(n+2) {
-    margin-left: 0.75em; }
   .form-actions input {
     margin-bottom: 0; }
 
 input.webform-previous {
-  background-color: #ffac00; }
+  background-color: #ffac00;
+  margin-bottom: 1em; }
 
 form input[type="submit"]:last-child {
   margin-bottom: 0; }
+
+@media screen and (min-width: 30em) {
+  form input[type="submit"]:first-child {
+    margin-bottom: 0; } }
 
 .sidebar-form form {
   padding: 0;
@@ -2689,11 +2707,26 @@ input[type="radio"] {
   justify-content: flex-start;
   flex-wrap: wrap; }
 
+.form-item.form-type-checkbox {
+  display: flex;
+  align-items: center; }
+  .form-item.form-type-checkbox input {
+    margin-right: 0.5rem; }
+  .form-item.form-type-checkbox label {
+    margin: 0;
+    font-weight: 600; }
+
 .container-inline.form-wrapper {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  flex-wrap: wrap; }
+  @media screen and (min-width: 30em) {
+    .container-inline.form-wrapper {
+      justify-content: space-between; } }
   .container-inline.form-wrapper input[type="submit"] {
     background-color: #8ccb41; }
+    .container-inline.form-wrapper input[type="submit"]:hover {
+      background-color: #72aa2f; }
 
 .webform-progressbar-number {
   font-family: 'ff-mark-web-pro';
@@ -3105,6 +3138,9 @@ html.no-touchevents input[type="submit"].purple-a:hover {
 html.no-touchevents .text-button.purple-a:active,
 html.no-touchevents input[type="submit"].purple-a:active {
   background-color: #4e70f3; }
+html.no-touchevents .text-button.webform-previous:hover,
+html.no-touchevents input[type="submit"].webform-previous:hover {
+  background-color: #e69b00; }
 html.no-touchevents nav a[href]:hover {
   text-decoration: none; }
 html.no-touchevents footer a:hover {
