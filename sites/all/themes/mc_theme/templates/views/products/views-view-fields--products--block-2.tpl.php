@@ -33,7 +33,7 @@
         $style      = 'large';
     ?>
     <!-- <p>(<?php print image_style_url('medium', $img_url) ?>)</p> -->
-        <div class="img img-overlay widescreen--wrapper" style='background-image: url(<?php print $fields['uri']->content; ?>);'>
+        <div class="img img-overlay widescreen--wrapper" style='background-image: url(<?php print $fields['field_cover_image_1']->content; ?>);'>
             <h3>
             	<?php print $fields['title']->content; ?>
         	</h3>

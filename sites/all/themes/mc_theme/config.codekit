@@ -755,15 +755,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/templates\/views\/destinations\/views-view-fields--destinations--block-2.tpl.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/templates\/views\/destinations\/views-view-fields--destinations--block-2.tpl.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/templates\/views\/destinations\/views-view-fields--destinations--block-3.tpl.php": {
 		"fileType": 8192,
 		"ignore": 0,

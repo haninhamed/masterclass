@@ -27,7 +27,7 @@
 
 <div>
     <a href="<?php print $fields['path']->content; ?>">
-        <div class="img img-overlay widescreen--wrapper" style='background-image: url(<?php print $fields["uri"]->content; ?>);'>
+        <div class="img img-overlay widescreen--wrapper" style='background-image: url(<?php print $fields['field_cover_image']->content; ?>);'>
         
             <h3>
             	<?php print $fields['title']->content; ?>

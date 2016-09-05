@@ -1730,12 +1730,14 @@ section.sidebar,
     justify-content: center;
     align-items: flex-start; } }
 
-@media screen and (min-width: 33.75em) {
-  .card-wrapper {
-    justify-content: flex-start !important; } }
-@media screen and (min-width: 48em) {
-  .card-wrapper {
-    margin-top: 1em; } }
+.card-wrapper {
+  width: 100%; }
+  @media screen and (min-width: 33.75em) {
+    .card-wrapper {
+      justify-content: flex-start !important; } }
+  @media screen and (min-width: 48em) {
+    .card-wrapper {
+      margin-top: 1em; } }
 
 @media screen and (min-width: 48em) {
   .card-wrapper.team {
@@ -1766,10 +1768,12 @@ footer section {
   width: 100%; }
 
 .view-destinations,
-.view-products {
+.view-products,
+.view-sports {
   width: 100%; }
   .view-destinations .view-content,
-  .view-products .view-content {
+  .view-products .view-content,
+  .view-sports .view-content {
     width: 100%; }
 
 footer ul.menu li a {

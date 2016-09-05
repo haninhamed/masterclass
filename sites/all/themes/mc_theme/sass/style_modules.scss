@@ -2497,6 +2497,7 @@ div.main {
 // Card Wrapper
 
 	.card-wrapper {
+		width: 				100%;
 		@media screen and (min-width: 33.75em) {
 			justify-content: flex-start !important;
 		}
@@ -2555,7 +2556,8 @@ div.main {
 	}
 
 	.view-destinations,
-	.view-products {
+	.view-products,
+	.view-sports {
 		width:			100%;
 
 		.view-content {
