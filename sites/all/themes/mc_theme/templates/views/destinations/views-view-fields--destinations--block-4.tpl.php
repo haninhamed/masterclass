@@ -1,4 +1,4 @@
-style='background-image: url(<?php print $fields['field_cover_image_1']->content; ?>);'<?php
+<?php 
 
 /**
  * @file
