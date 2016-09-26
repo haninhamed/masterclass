@@ -49,7 +49,7 @@
 
             <a href="<?php print $fields['path']->content; ?>" class="flex--box row start-align between">
                 <p>
-                    <?php print $fields['field_introduction']->content; ?>
+                    <?php print $fields['field_introduction_2_1']->content; ?>
                 </p>
             </a>
         </div>

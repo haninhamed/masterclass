@@ -331,13 +331,13 @@
 			flex-wrap: 		wrap;
 			align-items:	center;
 			padding:		0 5vw;
-			width:			90vw;
+			width:			100%;
 		}
 
 		@media screen and (min-width: 64em) {
 		    padding-left:	10vw;
 		    padding-right:	10vw;
-		    width: 			80vw;
+		    width: 			100%;
 		}
 
 		@media screen and (min-width: 82em) {
@@ -1774,7 +1774,7 @@
 		// transform:		translateY($absLargeBaseLine * -1);
 		z-index: 		25;
 		border-radius:	0 0 $relSmallGutter / 2 $relSmallGutter / 2;
-		background-color: $yellow-a;
+		background-color: $grey-very-light;
 
 		@media screen and (min-width: 30em) {
 			border-radius:	0 0 $relSmallGutter $relSmallGutter;
@@ -1788,7 +1788,7 @@
 		margin-bottom:	0;
 		transition:		color $fast-cubic,
 						transform $fast-cubic;
-		color:			$white;
+		color:			$grey-dark;
 		width:			100%;
 		overflow:		hidden;
 		text-overflow:	ellipsis;
@@ -2499,7 +2499,7 @@ div.main {
 	.card-wrapper {
 		width: 				100%;
 		@media screen and (min-width: 33.75em) {
-			justify-content: flex-start !important;
+			justify-content: space-between !important;
 		}
 
 		@media screen and (min-width: 48em) {
