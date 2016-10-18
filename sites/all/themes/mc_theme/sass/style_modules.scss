@@ -2369,6 +2369,9 @@ p + .text-button {
 
 	article img {
 		margin-top:	$relLargeGutter;
+		position:	relative;
+		left:		50%;
+		transform:	translateX(-50%);
 	}
 
 // Inactive Items
