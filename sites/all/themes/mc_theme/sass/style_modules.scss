@@ -1513,7 +1513,8 @@
 		font-style: normal;
 	}
 
-	footer h3 {
+	footer h3,
+	footer .heading-c {
 		color:		$white;
 	}
 
@@ -4235,3 +4236,15 @@ input[type="radio"] {
         }
 	}
 }
+
+// .g-recaptcha {
+// 	& > div {
+// 		width:		100% !important;
+// 		height:		100% !important;
+// 	}
+// }
+
+// iframe[title="recaptcha widget"],
+// div.rc-anchor {
+// 	width:			100% !important;
+// }
