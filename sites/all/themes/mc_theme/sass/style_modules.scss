@@ -980,6 +980,13 @@
 		padding:		0 $absLargeGutter / 2;
 		font-style:	normal;
 		color:		$white;
+		// border-radius:	$relSmallGutter / 2 $relSmallGutter / 2 0 0;
+
+		// @media screen and (min-width: 64em) {
+			// padding:	0 1em 0 0;
+		    // margin: 	0;
+		    // width:		auto;
+		// }
 
 		&:active {
 			background-color:	$orange-b;
@@ -1062,7 +1069,6 @@
 		    width: 100%;
 		    text-overflow: ellipsis;
 		    overflow-x: hidden;
-		    margin-left:	0;
 		    // border-radius:	initial;
 
 		    &:first-child {
@@ -3766,9 +3772,12 @@ div.main {
 	// Rugby
 
 			.icon-wrapper.rugby-wrapper {
-				transition:		box-shadow 0.8s ease 0.4s,
-								background-color 1.2s ease;
-				overflow:		hidden;
+			// box-shadow:		inset 0 -1em 0 0 $green-a;
+			transition:		box-shadow 0.8s ease 0.4s,
+							background-color 1.2s ease;
+				// background-color: transparent;
+				// border-radius:	0.3125em;
+				overflow:	hidden;
 			
 			.extra-wrapper {
 					transition:	transform 0.8s ease;
@@ -3786,6 +3795,8 @@ div.main {
 
 		html.no-touchevents .sport-button:hover .icon-wrapper.rugby-wrapper,
 		html.touchevents .sport-button:active .icon-wrapper.rugby-wrapper {
+			// box-shadow:		inset 0 0em 0 0 $green-a;
+				// background-color:	$blue-a;
 
 			.extra-wrapper {
 				transform:	scale(0.5)
@@ -3793,6 +3804,7 @@ div.main {
 			}
 
 			svg.rugby {
+				// animation:		rugby 0.4s linear infinite both;
 				transform:		rotate(-3600deg);
 			}
 		}
@@ -3872,11 +3884,23 @@ li {
 
 .block.ctas .block-content {
 	@media screen and (min-width: 30em) {
-
+		// display:		flex;
+		// justify-content: space-between;
+		// flex-wrap: 		wrap;
 	}
 
 	.text-button:nth-of-type(n+2) {
+		// @media screen and (min-width: 30em) {
+			// margin-left:	$relLargeGutter;
+		// }
 
+		// @media screen and (min-width: 48em) {
+			// margin-left:	0;
+		// }
+
+		// @media screen and (min-width: 82em) {
+			// margin-left:	$relLargeGutter;
+		// }
 	}
 }
 
@@ -3884,7 +3908,9 @@ li {
 	#block-views-sports-block-1,
 	.block.ctas {
 		@media screen and (min-width: 42.5em) {
-
+			// width:		calc(50% - 0.25rem);
+			// float:		left;
+			// margin-right:	0.5rem;
 		}
 
 		@media screen and (min-width: 48em) {
@@ -3927,11 +3953,44 @@ li {
 		width:			100%;
 		margin-top:		1em;
 	}
+
+	// @media screen and (min-width: 64em) {
+		// width:			auto;
+	// }
+
+	// @media screen and (min-width: 64em) {
+		// width:			auto;
+	// }
 }
 
 .info-nugget + .ctas {
 	margin-top:			0;
 }
+
+// .card.team + div {
+// 	position:		relative;
+// 	margin-bottom:	1.5em;
+// 	overflow:		hidden;
+// 	max-height:		12em;
+// 	transition:		max-height $fast-cubic;
+
+// 	&:after {
+// 		content:	"click to read more";
+// 		display:	block;
+// 		font-weight: $bold;
+// 		position: 	absolute;
+// 		bottom:		0;
+// 		width: 		100%;
+// 		text-align: center;
+// 		left:		0;
+// 		transition:	opacity $fast-cubic;
+// 		padding-top:		6em;
+// 		font-family: 		$displayType;
+// 		letter-spacing:		-0.047em;
+// 		color:				$black;
+// 		background-image:	linear-gradient(to bottom, transparent 0%, $white 100%);
+// 	}
+// }
 
 .affiliate-group .card.team {
 	margin-bottom:	1em;
@@ -4007,6 +4066,25 @@ li {
 			transform:		rotate(360deg);
 		}
 	}
+
+	// .ajax-progress {
+	//     width: 100%;
+	//     display: flex;
+	//     justify-content: center;
+	//     align-items: center;
+	//     font-size: 1.5em;
+	//     text-align: center;
+
+	    // .throbber {
+    	//     background: initial;
+		   //  float: none;
+		   //  height: initial;
+		   //  width: initial;
+		   //  margin: initial;
+		   //  padding: initial;
+		   //  animation:	throbberJack 1s ease infinite;
+	    // }
+	// }
 
 	.page-node-52 p.field-body.view-mode-full {
 		display:		none;
@@ -4125,7 +4203,7 @@ input[type="radio"] {
 }
 
 .webform-progressbar-number {
-    font-family: 'ff-mark-web-pro';
+	    font-family: 'ff-mark-web-pro';
     font-weight: 900;
     font-size: 0.875em;
     text-transform: lowercase;
@@ -4139,6 +4217,7 @@ input[type="radio"] {
 	margin-top:	$relBaseSize;
 
 	.square--wrapper {
+		// width:		20%nyc
 		display:	block;
 	    background-size: 125%;
 	    border: 2px solid #ffac00;
@@ -4152,7 +4231,84 @@ input[type="radio"] {
 
         &:hover {
         	transform: rotate3d(1, 2, 1, -30deg) scale(0.875);
+		    // background-color: #eee;
 		    box-shadow:	0 0 2em 0em rgba(255, 172, 0, 0.5);
         }
 	}
 }
+
+// .g-recaptcha {
+// 	& > div {
+// 		width:		100% !important;
+// 		height:		100% !important;
+// 	}
+// }
+
+// iframe[title="recaptcha widget"],
+// div.rc-anchor {
+// 	width:			100% !important;
+// }
+
+// Charts
+
+	// @keyframes fillup {
+		// to { stroke-dasharray: 158 158; }
+	// }
+
+	svg {
+	  width: 100px; height: 100px;
+	  transform: rotate(-90deg);
+	  background: $yellow-a;
+	  border-radius: 50%;
+	}
+
+	circle {
+	  fill: $yellow-a;
+	  stroke: $orange-a;
+	  stroke-width: 32;
+	  // stroke-dasharray: 38 100; /* for 38% */
+	   // animation: 		fillup 1s 2s ease forwards;
+      // animation-iteration-count: 1;
+	}
+
+	// svg {
+	//   width: 100px; height: 100px;
+	//   transform: rotate(-90deg);
+	//   background: $yellow-a;
+	//   border-radius: 50%;
+	// }
+
+	// circle {
+	//   fill: 		$yellow-a;
+	//   stroke: 		$orange-a;
+	//   stroke-width: 50;
+	//   stroke-dasharray: 38 100; /* for 38% */
+	//   animation: 		fillup 1s 2s ease forwards;
+ //      animation-iteration-count: 1;
+	// }
+
+	.charts {
+		width:			auto;
+		display:		inline-block;
+
+		&:nth-of-type(1) {
+			margin-right:	$absBaseSize;
+		}
+
+		&:nth-of-type(2) {
+			margin-right:	$absBaseSize;
+		}
+
+		* {
+			text-align:	center;
+		}
+
+		h4 {
+			width:		100%;
+			min-height:	3em;
+		}
+	}
+
+	.no-shrink {
+		flex-shrink:	0;
+	}
