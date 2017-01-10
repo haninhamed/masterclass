@@ -29,7 +29,7 @@
         <a href="<?php print $fields['path']->content; ?>">
             <div class="img img-overlay widescreen--wrapper" style='background-image: url(<?php print $fields["field_cover_image"]->content; ?>);'>
                 <h3>
-                    <?php print $fields['title']->content; ?>
+                    <?php print $fields['field_alt_title']->content; ?>
                 </h3>
                 
                 <p class="blurb">
@@ -39,14 +39,6 @@
         </a>
         
         <div class="info">
-            <!-- <a href="<?php print $fields['path']->content; ?>" class="flex--box row start-align between"> -->
-                <!-- <h3> -->
-                    <!-- <?php print $fields['title']->content; ?> -->
-                <!-- </h3> -->
-
-                <!-- <span class="fa fa-chevron-right"></span> -->
-            <!-- </a> -->
-
             <a href="<?php print $fields['path']->content; ?>" class="flex--box row start-align between">
                 <p>
                     <?php print $fields['field_introduction_2_1']->content; ?>

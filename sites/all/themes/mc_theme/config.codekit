@@ -800,6 +800,24 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/templates\/views\/destinations\/views-view-fields--what-customers-say--what-schools-say.tpl.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/templates\/views\/destinations\/views-view-fields--what-customers-say--what-schools-say.tpl.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/templates\/views\/destinations\/views-view-fields--what-customers-say--wss-chart.tpl.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/templates\/views\/destinations\/views-view-fields--what-customers-say--wss-chart.tpl.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/templates\/views\/destinations\/views-view-unformatted--destinations--block-2.tpl.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -832,6 +850,24 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/templates\/views\/destinations\/views-view-unformatted--destinations--block-5.tpl.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/templates\/views\/destinations\/views-view-unformatted--what-customers-say--what-schools-say.tpl.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/templates\/views\/destinations\/views-view-unformatted--what-customers-say--what-schools-say.tpl.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/templates\/views\/destinations\/views-view-unformatted--what-customers-say--wss-chart.tpl.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/templates\/views\/destinations\/views-view-unformatted--what-customers-say--wss-chart.tpl.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
