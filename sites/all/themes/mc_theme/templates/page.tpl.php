@@ -91,6 +91,7 @@
  * @see adaptivetheme_process_page()
  */
 ?>
+
 <div id="page-wrapper">
   <div id="page" class="container <?php print $classes; ?>">
 
@@ -114,7 +115,7 @@
             <div<?php print $hgroup_attributes; ?>>
 
               <?php if ($site_name): ?>
-                <p<?php print $site_name_attributes; ?>><?php print $site_name; ?></p>
+                <h1<?php print $site_name_attributes; ?>><?php print $site_name; ?></h1>
               <?php endif; ?>
 
               <?php if ($site_slogan): ?>
