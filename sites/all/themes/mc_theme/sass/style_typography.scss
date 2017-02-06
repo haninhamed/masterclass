@@ -160,10 +160,11 @@
 		blockquote {
 			position:		relative;
 			font-family: 	$displayType;
+			font-weight:	$regular;
 			padding:		0;
 			font-weight:	$semibold;
 			margin-bottom:	0;
-			font-size: 		$relBaseSize;
+			// font-size: 		$relBaseSize;
 			letter-spacing: -0.047em;
 			color:			$black;
 

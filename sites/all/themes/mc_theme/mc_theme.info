@@ -440,7 +440,7 @@
   settings[rel_author] = 0
 
 
-  ; Mobile metu toggle
+  ; Mobile menu toggle
   settings[menu_toggle_tablet_portrait]  = 1
   settings[menu_toggle_tablet_landscape] = 0
   settings[menu_toggle_main_menu]        = 1
@@ -480,3 +480,7 @@ core = "7.x"
 project = "adaptivetheme"
 datestamp = "1395575059"
 
+;-------------- CSS FOAD -------------
+stylesheets[all][] = system.messages.css
+stylesheets[all][] = comment.css
+stylesheets[all][] = node.css

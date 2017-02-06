@@ -140,7 +140,8 @@
 				margin-top:		0;
 			}
 
-			article .text-button {
+			article .text-button,
+			.text-button {
 				margin-top:		$relLargeGutter;
 				text-shadow: 	initial;
 				box-shadow:		initial;
@@ -980,6 +981,7 @@
 		padding:		0 $absLargeGutter / 2;
 		font-style:	normal;
 		color:		$white;
+		margin-bottom:	0;
 		// border-radius:	$relSmallGutter / 2 $relSmallGutter / 2 0 0;
 
 		// @media screen and (min-width: 64em) {
@@ -4312,3 +4314,22 @@ input[type="radio"] {
 	.no-shrink {
 		flex-shrink:	0;
 	}
+
+	/* Add any valid CSS declarations */
+
+html.js fieldset.collapsed .fieldset-wrapper { display: initial !important;}
+
+html.js fieldset.collapsed .fieldset-wrapper { max-height:initial !important; display:block!important; overflow:initial!important;}
+
+html.js fieldset.collapsed { height:initial!important;}
+
+html.js fieldset.collapsed .fieldset-legend { background-image:initial!important;}
+
+.sport-button svg {
+	background:	none !important;
+	width:		initial!important;
+	height:		initial!important;
+	transform:	rotate(0deg)!important;
+	-webkit-transform:initial !important; 
+	border-radius:	initial !important;
+}
